@@ -1,0 +1,2358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Innvoice Documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="keywords" content="Site Builder Documentation, Site Builder Online Documentation, Site Builder Manual">
+    <meta name="description" content="Learn how to use and configure Site Builder!">
+
+    <!-- Loading Bootstrap -->
+    <link href="css/vendor/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Loading Flat UI Pro -->
+    <link href="css/flatui.css" rel="stylesheet">
+    
+    <!-- Custom style -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- unicons -->
+    <link href="fonts/unicons/unicons.css" rel="stylesheet">
+
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/vendor/html5shiv.js"></script>
+      <script src="js/vendor/respond.min.js"></script>
+    <![endif]-->
+	<!--Start of Zopim Live Chat Script-->
+	<script type="text/javascript">
+	window.$zopim||(function(d,s){var z=$zopim=function(c){z._.push(c)},$=z.s=
+	d.createElement(s),e=d.getElementsByTagName(s)[0];z.set=function(o){z.set.
+	_.push(o)};z._=[];z.set._=[];$.async=!0;$.setAttribute("charset","utf-8");
+	$.src="//v2.zopim.com/?1wEq8orZ8wMMsNxYAjNrCUPG4McYlWW6";z.t=+new Date;$.
+	type="text/javascript";e.parentNode.insertBefore($,e)})(document,"script");
+	</script>
+	<!--End of Zopim Live Chat Script-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-66438251-1', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+  </head>
+  <body data-spy="scroll" style="position: relative" data-target="#theNav">
+    
+    <div class="container-fluid">
+    
+    	<div class="row">
+    	
+    		<div class="col-md-12">
+    		
+    			<h2 class="text-center">Innvoice Documentation</h2>
+				
+				<p class="text-center" style="margin-bottom: 40px">Software version: <b>1.04</b></p>
+    		
+    		</div><!-- /.col -->
+    	
+    	</div><!-- /.row -->
+    
+    	<div class="row">
+    	
+    		<div class="col-md-3">
+    			
+    			<div id="theNav">
+    			<ul class="nav nav-list nav-list-bricks" id="nav" data-spy="affix" data-offset-top="160">
+    				<li class="nav-header">1 User Manual</li>
+	    			<li class="active">
+		    			<a href="#dashboard">
+			    			1 The Dashboard
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+			    	</li>
+					
+					<li style="height: 10px"></li>
+					
+			    	<li>
+				    	<a href="#invoices">
+					    	2 Invoices
+					    	<span class="fui-arrow-right pull-right"></span>
+					    </a>
+					</li>
+					<li>
+						<a href="#invoice_create">
+							2.1 Creating an Invoice
+							<span class="fui-arrow-right pull-right"></span>
+						</a>
+					</li>
+					<li>
+						<a href="#invoice_edit">
+							2.2 Editing an Invoice
+							<span class="fui-arrow-right pull-right"></span>
+						</a>
+					</li>
+					<li>
+						<a href="#invoice_items">
+							2.3 Invoice Items
+							<span class="fui-arrow-right pull-right"></span>
+						</a>
+					</li>
+					<li>
+						<a href="#invoice_payments">
+							2.4 Invoice Payments
+							<span class="fui-arrow-right pull-right"></span>
+						</a>
+					</li>
+					<li>
+						<a href="#emailing_invoice">
+							2.5 Emailing an invoice
+							<span class="fui-arrow-right pull-right"></span>
+						</a>
+					</li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#clients">
+			    			3 Clients
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#clients_overview">
+			    			3.1 Client Overview
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#clients_details">
+			    			3.2 Client Details
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#clients_payments">
+			    			3.3 Client Payments
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#clients_invoices">
+			    			3.4 Client Invoices
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#clients_notes">
+			    			3.5 Client Notes
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#reports">
+			    			4 Reports
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#reports_generate">
+			    			4.1 Generating Reports
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#myaccount">
+			    			5 My Account & Account settings
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#payment_integration">
+			    			6 Payment integration
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#payment_stripe">
+			    			6.1 Stripe / Credit Card
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#payment_paypal">
+			    			6.2 Paypal
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#api">
+			    			7 RESTful API
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#api_keys">
+			    			7.1 API keys
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#api_clients">
+			    			7.2 Clients
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#api_invoices">
+			    			7.3 Invoices
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#api_payments">
+			    			7.4 Payments
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#configurationsettigns">
+			    			8 Configuration & Settings
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#applicationsettings">
+			    			8.1 Application Settings
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#configurationfile">
+			    			8.2 Configuration File
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					<li>
+		    			<a href="#email_configuration">
+			    			8.3 Email Configuration
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+                    <li>
+                        <a href="#translation">
+			    			8.4 Translation
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+                    </li>
+					
+					<li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#cron">
+			    			9 Cron job
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+                    
+                    <li style="height: 10px"></li>
+					
+					<li>
+		    			<a href="#upgrading">
+			    			10 Upgrading
+			    			<span class="fui-arrow-right pull-right"></span>
+			    		</a>
+					</li>
+					
+					<li>
+		    			<a href="">
+			    			&nbsp;
+			    		</a>
+					</li>
+					<li>
+		    			<a href="">
+			    			&nbsp;
+			    		</a>
+					</li>
+					
+				</ul>
+    			</div><!-- /#theNav -->
+    		
+    		</div><!-- /.col -->
+    		
+    		<div class="col-md-8 col-md-offset-1">
+    		
+    			<div class="section" id="dashboard">
+    			
+    				<h3>1 The Dashboard</h3>
+    				
+    				<p>
+						After logging into Innvoice, you will be take to your main dashboard. The dashboard page will give you a clear overview of the current state of affairs regarding your invoices, payments and clients.
+					</p>
+					
+					<p>
+						<img src="img/screenshot1.png" alt="Innvoice">
+					</p>
+					
+					<p>
+						The three blocks at the top, indicate the amounts received, due and past due. The graph below shows total income for this year, distributed per month and compared to the previous year. The second graph shows the total income for this year distributed per client.
+					</p>
+					
+					<p>
+						<b>Please note:</b> the dashboard can only display a single currency. If you have invoices in multiple currencies, you can use the currency drop down menu in the top right corner to switch between currencies.
+					</p>
+    			
+    			</div><!-- /#dashboard -->
+    			
+    			<div class="section" id="invoices">
+					
+					<h2>2 Invoices</h2>
+					
+					<p>
+						Invoices is what it's all about with Innvoice. Innvoice allows you to create and manage Innvoice for multiple clients. Innvoice also supports multiple currencies (although a single invoice can only use one single currency).
+					</p>
+					
+				</div><!-- /.#invoices -->
+				
+				<div class="section" id="invoice_create">
+					
+					<h2>2.1 Creating an Invoice</h2>
+					
+					<p>
+						To create a new invoice, click the green button labeled "Create new invoice for ..." just next to the Innvoice logo in the top bar. This will reveal a list with your current clients; next you will need to select the client for which you'd like to generate the invoice. Once clicked, the new invoice will be generated and you will be redirected to the new invoice.
+					</p>
+					
+					<p>
+						<img src="img/screenshot2.png" alt="Innvoice">
+					</p>
+										
+				</div><!-- /#invoice_create -->
+				
+				<div class="section" id="invoice_edit">
+					
+					<h2>2.2 Editing an Invoice</h2>
+					
+					<p>
+						After opening up an invoice, you can either edit it in-line, or using the "Edit Invoice" button. When hovering over certain parts of the invoice, a blue dashed outline will appear around certain elements; this means this element can be editing in-line (try it by hovering over the invoice title). When you have made a change to an invoice, don't forget to click the save button (changes are not automatically saved!).
+						
+					</p>
+					
+					<p>
+						<img src="img/screenshot3.png" alt="Innvoice">
+					</p>
+										
+					<p>
+						Another way to edit your invoice is to click the gray button labeled "Edit Invoice". This will reveal a panel showing the available options for your invoice. These options are divided into the following tabs:
+					</p>
+					
+					<p>
+						<img src="img/screenshot4.png" alt="Innvoice">
+					</p>
+					
+					<h4>Invoice Details</h4>
+					
+					<p>
+						This tab contains all the main options for your invoice.
+					</p>
+					
+					<ul>
+						<li>
+							<b>Invoice Title</b><br>
+							This is the title as it appears on your invoice. This field can be left empty if you don't want a title displayed.
+						</li>
+						<li>
+							<b>Client</b><br>
+							The client to which this invoice is connected.
+						</li>
+						<li>
+							<b>Invoice Number</b><br>
+							Unique number identifying this invoice. This field is required for every invoice. When a new invoice is generated, this number is assigned automatically, using an internal counter. This internal counter can be reset/configured through the settings page.
+						</li>
+						<li>
+							<b>PO (Purchase Order) Number</b><br>
+							The purchase order number for this invoice.
+						</li>
+						<li>
+							<b>Issue Date</b><br>
+							The date on which this invoice was issued. This field is a required field and is automatically set when the invoice is created (but can be changed later if needed).
+						</li>
+						<li>
+							<b>Visible to Client?</b><br>
+							This determines whether the invoice can be publicly access on its own URL (so the client can view it online).
+						</li>
+						<li>
+							<b>Public URL</b><br>
+							If the invoice is publicly visible; this field contains the URL on which the URL can be viewed. 
+						</li>
+						<li>
+							<b>Recurring Invoice</b><br>
+							This setting will turn this invoice into a recurring one; meaning it will regenerate automatically until this setting is changed or the invoice is removed from the system.
+						</li>
+					</ul>
+					
+					<h4>Financials</h4>
+					
+					<p>
+						This tab contains all the financial options for your invoice.
+					</p>
+					
+					<ul>
+						<li>
+							<b>Due Date</b><br>
+							The date on which payment for this invoice is due.
+						</li>
+						<li>
+							<b>Paid?</b><br>
+							Is the status of this invoice set to "paid"? This overrides everything else, so whether payments have been made, the status of this invoice will be set to "paid" if "yes" is selected.
+						</li>
+						<li>
+							<b>Currency</b><br>
+							Which currency this invoice should use. When the invoice is created, the currency is automatically set according to the default currency for the client.
+						</li>
+						<li>
+							<b>Discount</b><br>
+							An optional discount in percentages.
+						</li>
+						<li>
+							<b>Allow bank payment?</b><br>
+							If set to "Yes", the client can submit a bank payment for this invoice.
+						</li>
+						<li>
+							<b>Allow Credit Card payment?</b><br>
+							If set to "Yes", the client is allowed to pay the invoice by credit card. Payments are handled by Stripe and for this setting to be available, the Stripe API keys need to have been entered.
+						</li>
+						<li>
+							<b>Allow Paypal payment?</b><br>
+							If set to "Yes", the client is allowed to pay the invoice by using Paypal. For this setting to be available, Paypal integration must have been configured.
+						</li>
+					</ul>
+					
+					<h4>Tax</h4>
+					
+					<p>
+						This tab contains all the tax options for your invoice.
+					</p>
+					
+					<ul>
+						<li>
+							<b>Tax Type</b><br>
+							This is the name of the tax as it appears on the invoice. Typically, this would be something like "VAT" or "GST". This field can contain any text value.
+						</li>
+						<li>
+							<b>Tax %</b><br>
+							The percentage of tax applied to this invoice. Please note that when a discount is applied in combination with a Tax, the discount is processed <b>before</b> the tax is deducted.
+						</li>
+					</ul>
+					
+					<h4>Notes</h4>
+					
+					<p>
+						This tab contains all notes fields for this invoice.
+					</p>
+					
+					<ul>
+						<li>
+							<b>Top Note</b><br>
+							This note appears at the top of the invoice, if any note is entered.
+						</li>
+						<li>
+							<b>Bottom Note</b><br>
+							This note appears at the bottom of the invoice, if any note is entered.
+						</li>
+						<li>
+							<b>Internal Notes</b><br>
+							This field is for internal notes only; the client will not be able to see this note.
+						</li>
+					</ul>
+										
+				</div><!-- /#invoice_edit -->
+				
+				<div class="section" id="invoice_items">
+					
+					<h2>2.3 Invoice Items</h2>
+					
+					<p>
+						The item section is the table containing all your invoice items within your invoice. This section is fully customizable and you're free to structure this section any what you'd like. You can alter the structure of the table to meet your exact requirements. This flexibility makes Innvoice suitable for basically any type of business. 
+					</p>
+					
+					<p>
+						<img src="img/screenshot5.png" alt="Innvoice">
+					</p>
+					
+					<p>
+						To customize the item structure, either hover over the headers and click the green edit icon towards the right edge of the header OR click the gray button labeled "Edit Structure" below the items table. This will bring up a pop-up allowing you to modify the structure. Please note that when you modify the structure, the entire item section will reset, you will lose whatever data you currently have in the item section.
+					</p>
+					
+					<p>
+						<img src="img/screenshot6.png" alt="Innvoice">
+					</p>
+					
+					<p>
+						When adding data to the item section, you can either add a single item by clicking the green button labeled "Add Single Item" OR you can click the green button labeled "Import Data" to import a CSV file.
+					</p>
+					
+					<h4>Data Import</h4>
+					
+					<p>
+						When using the Data Import function, please keep the following in mind:
+					</p>
+					
+					<ul>
+						<li>
+							Make sure your "/tmp" folder is writable
+						</li>
+						<li>
+							Your data file should contain <b>at least</b> three rows of data. If your file contains fewer data, the file import might not function properly
+						</li>
+						<li>
+							Innvoice expects the first row in your file to contain the column names
+						</li>
+						<li>
+							Innvoice expects the last column to contain numeric values only! (except for the header)
+						</li>
+						<li>
+							When importing data, the entire item section is overwritten
+						</li>
+					</ul>
+					
+				</div><!-- /#invoice_items -->
+				
+				<div class="section" id="invoice_payments">
+					
+					<h2>2.4 Invoice Payments</h2>
+					
+					<p>
+						Invoices would be of little usage without clients being able to pay 'em! Innvoice has got this covered by allowing clients to submit payments via bank, credit card and Paypal! The available payment methods are configured per invoice and depending on which methods are activated, the client will be able to use these to submit payments for their invoices.
+					</p>
+					
+					<p>
+						<img src="img/screenshot7.png" alt="Innvoice">
+					</p>
+					
+					<p>
+						All payments made for a specific invoice will appear in the invoice's "Payments" section; to access this section, click the gray button labeled "Payments". In addition to having clients submit payments, payments can be entered by the administrator as well by clicking the green button labeled "Add Payment".
+					</p>
+					
+					<p>
+						The following payment types are available:
+					</p>
+					
+					<ul>
+						<li>
+							<b>Bank</b><br>
+							When your client chooses to submit a bank payment, he or she will be forced to upload a document when submitting the payment. Typically, this document would be a payment slip or screenshot proofing the bank transfer. This document will be accessible through the invoice's "Payments" section.
+						</li>
+						<li>
+							<b>Stripe</b><br>
+							Integration with Stripe will allow your clients to pay invoices with their credit cards. This option will only be available when Stripe integration has been configured. For more info regarding Stripe integration, please read the Payment Integration section of this manual.
+						</li>
+						<li>
+							<b>Paypal</b><br>
+							Integration with Paypal will allow your clients to pay invoices with their Paypal accounts (or their credit cards). This option will only be available when Paypal integration has been configured. For more info regarding Paypal integration, please read the Payment Integration section of this manual.
+						</li>
+					</ul>
+					
+				</div><!-- /#invoice_payments -->
+				
+				<div class="section" id="emailing_invoice">
+					
+					<h2>2.5 Emailing an Invoice</h2>
+					
+					<p>
+						After creating an invoice, ideally you'd like this invoice to be sent to your client. Innvoice allows you to send an invoice directly to your client by clicking the button labeled "Send to Client". This will bring up a pop-up allowing you customize the message and the subject. The PDF version of the invoice will automatically be attached to the email.
+					</p>
+					
+					<p>
+						<img src="img/screenshot8.png" alt="Innvoice">
+					</p>
+					
+					<p>
+						<b>Please note</b> that for the emailing function to work properly, you will need to configure the email settings. For more information, please read the <b>Configuration & Settings</b> section of this manual.
+					</p>
+					
+				</div><!-- /#emailing_invoice -->
+				
+				<div class="section" id="clients">
+					
+					<h2>3 Clients</h2>
+					
+					<p>
+						Besides invoices, Innvoice also lets you manage all your clients.
+					</p>
+					
+				</div><!-- /#clients -->
+				
+				<div class="section" id="clients_overview">
+					
+					<h2>3.1 Client Overview</h2>
+					
+					<p>
+						The first thing you will see after loading a client page, is the client overview. This shows you a births eye view of all important info for this particular client. You will notice the client overview looks very similar to main dashboard. Just as the main dashboard, the client overview shows total amounts received, due and past due as well as money received month-by-month. Obviously, the client overview shows this data only for a single client. Just as with the main dashboard, you can switch between currencies if this client has been issues invoices in multiple currencies. 
+					</p>
+					
+					<p>
+						<img src="img/screenshot9.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#clients_overview -->
+				
+				<div class="section" id="clients_details">
+					
+					<h2>3.2 Client Details</h2>
+					
+					<p>
+						In the "Details" tab, you will be able to see and edit all this client's details.
+					</p>
+					
+					<p>
+						<img src="img/screenshot10.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#clients_details -->
+				
+				<div class="section" id="clients_invoices">
+					
+					<h2>3.3 Client Invoices</h2>
+					
+					<p>
+						Inside the "Invoices" tab, you will be able to quickly access all invoices issues to this client.
+					</p>
+					
+					<p>
+						<img src="img/screenshot11.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#clients_invoices -->
+				
+				<div class="section" id="clients_payments">
+					
+					<h2>3.4 Client Payments</h2>
+					
+					<p>
+						Inside the "Payments" tab, you will be able to quickly access all payments made by this client.
+					</p>
+					
+					<p>
+						<img src="img/screenshot12.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#clients_invoices -->
+				
+				<div class="section" id="clients_notes">
+					
+					<h2>3.5 Client Notes</h2>
+					
+					<p>
+						Inside the "Notes" tab, you will be able store notes relevant to this client (these notes are for internal usage and are not visible to the client).
+					</p>
+					
+				</div><!-- /#clients_notes -->
+				
+				<div class="section" id="reports">
+					
+					<h2>4 Reports</h2>
+					
+					<p>
+						Reports allow you to quickly and easily bundle data into a simple and clear format. It allows you to combine data from different clients/invoices into single reports.
+					</p>
+					
+					<p>
+						<img src="img/screenshot13.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#clients_notes -->
+				
+				<div class="section" id="reports_generate">
+					
+					<h2>4.1 Generate Reports</h2>
+					
+					<p>
+						To generate a new report, click the Report icon from the left menu and then click the button labeled "Create New Report". This will load a pop-up in which you can configure the new report's parameters.
+					</p>
+					
+					<p>
+						<img src="img/screenshot14.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#reports_generate -->
+				
+				<div class="section" id="myaccount">
+					
+					<h2>5 My Account & Account Settings</h2>
+					
+					<p>
+						You manage your Innvoice account and company settings, look for the link labeled "Account Functions" in the far right of the top menu bar. After clicking it, a drop down menu will appear and you will need to click the link labeled "My Account & Company". This will bring up a modal pop-up window with the account and company settings.
+					</p>
+					
+					<p>
+						You can optionally upload a logo as well. When uploaded, your logo will automatically appear on invoices and reports.
+					</p>
+					
+					<p>
+						<img src="img/screenshot15.png" alt="Innvoice">
+					</p>
+					
+				</div><!-- /#myaccount -->
+				
+				<div class="section" id="payment_integration">
+					
+					<h2>6 Payment Integration</h2>
+					
+					<p>
+						Innvoice allows you to integrate the application with popular payment services like Paypal and Stripe. When setup correctly, this allows your client to invoices directly online, either with their credit card or Paypal account (receiving bank payments does not require any form of integration).
+					</p>
+					
+					<p>
+						<b>Please note</b> that when Paypal or Stripe integration has not been configured, both payment methods will not be available (and won't appear in the invoice "Financial" section).
+					</p>
+										
+				</div><!-- /#payment_integration -->
+				
+				<div class="section" id="payment_stripe">
+					
+					<h2>6.1 Stripe / Credit Card</h2>
+					
+					<p>
+						Stripe is a payment provider, allowing users to receive credit card payments straight into their personal bank accounts. To be able to receive Stripe payments, you will need to enter a set of two keys, one public key and one private key. Both keys can be retrieved from your Stripe account ("Account Settings" > "API Keys").
+					</p>
+					
+					<p>
+						Once you have retrieved your Stripe keys, click the "Account Functions" drop down and then click the link labeled "Application Settings". Once the settings page has loaded, locate the section labeled "Payment integration: Stripe" and enter the Stripe keys.
+					</p>
+					
+					<p>
+						<img src="img/screenshot16.png" alt="Innvoice">
+					</p>
+										
+				</div><!-- /#payment_stripe -->
+				
+				<div class="section" id="payment_paypal">
+					
+					<h2>6.2 Paypal</h2>
+					
+					<p>
+						Paypal is a payment provider, allowing users to receive into their Paypal accounts. To be able to receive Paypal payments, you will need to the main email address connected to your Paypal account. Click the "Account Functions" drop down and then click the link labeled "Application Settings". Once the settings page has loaded, locate the section labeled "Payment integration: Paypal" and enter the Paypal email ID.
+					</p>
+					
+					<p>
+						<img src="img/screenshot17.png" alt="Innvoice">
+					</p>
+															
+				</div><!-- /#payment_paypal -->
+				
+				<div class="section" id="api">
+					
+					<h2>7 RESTful API</h2>
+					
+					<p>
+						Innvoice comes with a fully functional RESTful API, allowing you manage clients, invoices and payments from other applications or services. To be able to access the API, you must first make sure the API is activated (you can activate and deactivate the API from the "Application Settings" page).
+					</p>
+					
+					<p>
+						By default, the all API responses are in JSON format.
+					</p>
+															
+				</div><!-- /#api -->
+				
+				<div class="section" id="api_keys">
+					
+					<h2>7.1 API Keys</h2>
+					
+					<p>
+						To allow access to Innvoice API, a key is needed. To retrieve a key or generate a new key, click the "Account Functions" link and choose "API Keys" from the drop down menu. This will bring up a modal pop-up window in which you either copy/paste a key or generate a new key.
+					</p>
+					
+					<p>
+						<img src="img/screenshot18.png" alt="Innvoice">
+					</p>
+					
+					<p>
+						When generating an API call, you must always include a parameter named "<b>X-API-KEY</b>" containing the key value.
+					</p>
+															
+				</div><!-- /#api_keys -->
+				
+				<div class="section" id="api_clients">
+					
+					<h2>7.2 Clients</h2>
+										
+					<h4>GET (no "id" parameter)</h4>
+					
+					<p>
+						When no "<b>id</b>" parameter is passed, all the clients currently in Innvoice will be returned.
+					</p>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>GET /index.php/api/clients?X-API-KEY=ccbd961a9a83ac4c1469485f074e4274 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: b1be5be2-7802-3623-f60e-9ce81f612cd9</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>
+[
+    {
+        "client_id": "3",
+        "user_id": "1",
+        "client_name": "Andreas Liebrand",
+        "client_contact": "",
+        "client_email": "adreas@liebrand.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/andreasliebrand.com",
+        "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+        "client_notes": "Haven't heard back from Andreas regarding further work",
+        "client_default_currency": "USD",
+        "currency_id": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "total_paid": "0.00",
+        "total_due": "0.00",
+        "total_pastdue": "930.00"
+    },
+    {
+        "client_id": "4",
+        "user_id": "1",
+        "client_name": "Call & Publicidad",
+        "client_contact": "",
+        "client_email": "mjnaus@gmail.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/callandpublicidad.com",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "USD",
+        "currency_id": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "total_paid": "80.00",
+        "total_due": "0.00",
+        "total_pastdue": "0.00"
+    },
+    {
+        "client_id": "7",
+        "user_id": "1",
+        "client_name": "Doe Co",
+        "client_contact": "Johny Doe Doe",
+        "client_email": "john@doe.com",
+        "client_phone": "",
+        "client_fax": "",
+        "client_website": "",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "THB",
+        "currency_id": "19",
+        "currency_shortname": "THB",
+        "currency_fullname": "Thailand",
+        "currency_sign": "฿",
+        "total_paid": "6000.00",
+        "total_due": "0.00",
+        "total_pastdue": "6000.00"
+    },
+    {
+        "client_id": "5",
+        "user_id": "1",
+        "client_name": "Glow Marketing",
+        "client_contact": "",
+        "client_email": "glow@marketing.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/glowmarketing.com",
+        "client_address": "12a The Square, Wickham\\\r\\\nHampshire, PO17 5JQ",
+        "client_notes": "",
+        "client_default_currency": "USD",
+        "currency_id": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "total_paid": "0.00",
+        "total_due": "0.00",
+        "total_pastdue": "0.00"
+    },
+    {
+        "client_id": "6",
+        "user_id": "1",
+        "client_name": "Gu9Creative",
+        "client_contact": "",
+        "client_email": "info@gu9creative.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/gu9creative.com",
+        "client_address": "5 Eastgate House, Dogflud Way, Farnham\\\r\\\nSurrey, GU9 7UD UK",
+        "client_notes": "",
+        "client_default_currency": "USD",
+        "currency_id": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "total_paid": "1200.00",
+        "total_due": "0.00",
+        "total_pastdue": "0.00"
+    },
+    {
+        "client_id": "2",
+        "user_id": "1",
+        "client_name": "The Clarion Portfolio",
+        "client_contact": "Sharon",
+        "client_email": "mjnaus@gmail.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/clarion.com",
+        "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+        "client_notes": "Yeasjtyytj",
+        "client_default_currency": "USD",
+        "currency_id": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "total_paid": "9724.00",
+        "total_due": "0.00",
+        "total_pastdue": "-220.00"
+    },
+    {
+        "client_id": "8",
+        "user_id": "1",
+        "client_name": "Willwm",
+        "client_contact": "",
+        "client_email": "me@willem.com",
+        "client_phone": "",
+        "client_fax": "",
+        "client_website": "",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "USD",
+        "currency_id": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "total_paid": "0.00",
+        "total_due": "0.00",
+        "total_pastdue": "0.00"
+    }
+]</pre></code>
+					</p>
+					
+					<h4>GET (with "id" parameter set)</h4>
+					
+					<p>
+						When an "<b>id</b>" parameter is passed, the API will try to return the client connected to this ID or an error message if the client can not be found.
+					</p>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>GET /index.php/api/clients?X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&id=3 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: cf2c36f3-4769-743c-6d6d-f2d0537a7d39</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example (found):</b>
+						<code><pre>{
+    "client_id": "3",
+    "user_id": "1",
+    "client_name": "Andreas Liebrand",
+    "client_contact": "",
+    "client_email": "adreas@liebrand.com",
+    "client_phone": "0123456789",
+    "client_fax": "0123456789",
+    "client_website": "http:\\/\\/andreasliebrand.com",
+    "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+    "client_notes": "Haven't heard back from Andreas regarding further work",
+    "client_default_currency": "USD",
+    "currency_id": "1",
+    "currency_shortname": "USD",
+    "currency_fullname": "United States",
+    "currency_sign": "$"
+}</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example (not found):</b>
+						<code><pre>{
+    "status": false,
+    "message": "This client does not exist"
+}</pre></code>
+					</p>
+					
+					<h4>PUT</h4>
+					
+					<p>
+						The PUT request will attempt to create a new client. The following two fields are required:
+					</p>
+					
+					<ul>
+						<li>field_clientName</li>
+						<li>field_clientEmail</li>
+					</ul>
+					
+					<p>
+						The following fields are optional:
+					</p>
+					
+					<ul>
+						<li>field_clientContact</li>
+						<li>field_clientPhone</li>
+						<li>field_clientFax</li>
+						<li>field_clientWebsite</li>
+						<li>field_clientAddress</li>
+						<li>field_defaultCurrency (must contain a valid entry from the "currencies" table)</li>
+					</ul>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>PUT /index.php/api/clients HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 92292dc7-3db8-e1a8-f72a-ee2055bf5395
+Content-Type: application/x-www-form-urlencoded
+
+X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&field_clientName=Jane+Doe&field_clientEmail=jane%40doe.com&field_clientContact=Miss+Doe&field_clientPhone=0123456789&field_clientFax=0123456789&field_clientWebsite=www.doecompany.com&field_clientAddress=123+Somewhere+Street%2C+Somewhere+town%2C+19000&field_defaultCurrency=USD</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>{
+    "client_id": "12",
+    "user_id": "1",
+    "client_name": "Jane Doe",
+    "client_contact": "Miss Doe",
+    "client_email": "jane@doe.com",
+    "client_phone": "0123456789",
+    "client_fax": "0123456789",
+    "client_website": "www.doecompany.com",
+    "client_address": "123 Somewhere Street, Somewhere town, 19000",
+    "client_notes": "",
+    "client_default_currency": "USD",
+    "currency_id": "1",
+    "currency_shortname": "USD",
+    "currency_fullname": "United States",
+    "currency_sign": "$"
+}</pre></code>
+					</p>
+					
+					<h4>POST</h4>
+					
+					<p>The POST request will attempt to create update an existing user. The following fields are required:</p>
+					
+					<ul>
+						<li>Client ID (appended to the URL, for example: /index.php/api/clients/12)</li>
+						<li>field_clientName</li>
+						<li>field_clientEmail</li>
+					</ul>
+					
+					<p>
+						The following fields are optional:
+					</p>
+					
+					<ul>
+						<li>field_clientContact</li>
+						<li>field_clientPhone</li>
+						<li>field_clientFax</li>
+						<li>field_clientWebsite</li>
+						<li>field_clientAddress</li>
+						<li>field_defaultCurrency (must contain a valid entry from the "currencies" table)</li>
+					</ul>
+					
+					<p>
+						<b>Example request:</b>
+						<code><pre>POST /index.php/api/clients/12 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: b140cc1c-8ccb-3961-546a-515547bf2472
+Content-Type: application/x-www-form-urlencoded
+
+X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&field_clientName=Jane+Doeee&field_clientEmail=jane%40doe.com&field_clientContact=Miss+Doe&field_clientPhone=0123456789&field_clientFax=0123456789&field_clientWebsite=www.doecompany.com&field_clientAddress=123+Somewhere+Street%2C+Somewhere+town%2C+19000&field_defaultCurrency=USD</pre></code>
+					</p>
+					
+					<p>
+						<b>Example response:</b>
+						<code><pre>{
+    "client_id": "12",
+    "user_id": "1",
+    "client_name": "Jane Doeee",
+    "client_contact": "Miss Doe",
+    "client_email": "jane@doe.com",
+    "client_phone": "0123456789",
+    "client_fax": "0123456789",
+    "client_website": "www.doecompany.com",
+    "client_address": "123 Somewhere Street, Somewhere town, 19000",
+    "client_notes": "",
+    "client_default_currency": "USD",
+    "currency_id": "1",
+    "currency_shortname": "USD",
+    "currency_fullname": "United States",
+    "currency_sign": "$"
+}</pre></code>
+					</p>
+					
+					<h4>DELETE</h4>
+					
+					<p>
+						The DELETE request will attempt to delete a client. The following fields are required:
+					</p>
+					
+					<ul>
+						<li>Client ID (appended to the URL, for example: /index.php/api/clients/12)</li>
+					</ul>
+					
+					<p>
+						<b>Example request:</b>
+						<code><pre>DELETE /index.php/api/clients/16 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 915b7498-d14d-1d29-f733-31ef12b44f15
+Content-Type: application/x-www-form-urlencoded
+
+X-API-KEY=ccbd961a9a83ac4c1469485f074e4274</pre></code>
+					</p>
+					
+					<p>
+						<b>Example response:</b>
+						<code><pre>{"id":12,"message":"Deleted the resource"}</pre></code>
+					</p>
+															
+				</div><!-- /#api_clients -->
+				
+				<div class="section" id="api_invoices">
+					
+					<h2>7.3 Invoices</h2>
+					
+					<h4>GET (no "id" parameter)</h4>
+					
+					<p>
+						When no "id" parameter is passed, all the invoices currently in Innvoice will be returned. 
+					</p>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>GET /index.php/api/invoices/?X-API-KEY=ccbd961a9a83ac4c1469485f074e4274 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 5824cd3a-232b-16f0-84cd-246565ef30b5
+</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>[
+    {
+        "invoice_id": "26",
+        "client_id": "4",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 9",
+        "invoice_status": "due",
+        "invoice_number": "48",
+        "invoice_po": "",
+        "invoice_date": "1438230270",
+        "invoice_public": "1",
+        "invoice_recurring": "1",
+        "invoice_duedate": "1440201600",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "1",
+        "invoice_paymentstripe": "1",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "<tr><td>Test<\\/td><td>Test<\\/td><td>10<\\/td><td>1<\\/td><td>10<\\/td><\\/tr>",
+        "invoice_subtotal": "10.00",
+        "invoice_paidtodate": "10.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "1",
+        "invoice_code": "ScIowKTQsUHyejLRB846v0CdEJlFhN",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "Call & Publicidad",
+        "client_contact": "",
+        "client_email": "mjnaus@gmail.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/callandpublicidad.com",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "USD"
+    },
+    {
+        "invoice_id": "3",
+        "client_id": "2",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 3",
+        "invoice_status": "paid",
+        "invoice_number": "26",
+        "invoice_po": "12345",
+        "invoice_date": "1431622800",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431536400",
+        "invoice_discount": "10",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "VAT",
+        "invoice_taxamount": "20",
+        "invoice_topnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_bottomnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr><th>Item<\\/th><th>Description<\\/th><th>Item price<\\/th><th>Amount<\\/th><th>Total<\\/th><\\/tr>",
+        "invoice_items_body": "<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item eight<\\/td><td>Description<\\/td><td>400<\\/td><td>2<\\/td><td>800<\\/td><\\/tr>\\\n<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>",
+        "invoice_subtotal": "8800.00",
+        "invoice_paidtodate": "9504.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "k2ILnZxxWPn0N1n4Ud2i",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "The Clarion Portfolio",
+        "client_contact": "Sharon",
+        "client_email": "mjnaus@gmail.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/clarion.com",
+        "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+        "client_notes": "Yeasjtyytj",
+        "client_default_currency": "USD"
+    },
+    {
+        "invoice_id": "9",
+        "client_id": "4",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 9",
+        "invoice_status": "paid",
+        "invoice_number": "9",
+        "invoice_po": "",
+        "invoice_date": "1435622400",
+        "invoice_public": "1",
+        "invoice_recurring": "1",
+        "invoice_duedate": "1437523200",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "1",
+        "invoice_paymentstripe": "1",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "<tr><td>Test<\\/td><td>Test<\\/td><td>10<\\/td><td>1<\\/td><td>10<\\/td><\\/tr>",
+        "invoice_subtotal": "10.00",
+        "invoice_paidtodate": "10.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "Btwk5AQP46TbK7JZRvgdVEDXGCz3jO",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "Call & Publicidad",
+        "client_contact": "",
+        "client_email": "mjnaus@gmail.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/callandpublicidad.com",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "USD"
+    },
+    {
+        "invoice_id": "8",
+        "client_id": "8",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 8",
+        "invoice_status": "past due",
+        "invoice_number": "8",
+        "invoice_po": "",
+        "invoice_date": "1434646800",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1434646800",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "",
+        "invoice_subtotal": "0.00",
+        "invoice_paidtodate": "0.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "TMzlVbFQtwRIi6X3NvLK29UoE75n10",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "Willwm",
+        "client_contact": "",
+        "client_email": "me@willem.com",
+        "client_phone": "",
+        "client_fax": "",
+        "client_website": "",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "USD"
+    },
+    {
+        "invoice_id": "7",
+        "client_id": "7",
+        "user_id": "1",
+        "currency_id": "19",
+        "invoice_title": "Invoice Number 7",
+        "invoice_status": "past due",
+        "invoice_number": "7",
+        "invoice_po": "",
+        "invoice_date": "1432684800",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1432684800",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "<tr><td><\\/td><td><\\/td><td><\\/td><td><\\/td><td>12000<\\/td><\\/tr>",
+        "invoice_subtotal": "12000.00",
+        "invoice_paidtodate": "6000.00",
+        "invoice_balance": "6000.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "JD2H8zgUePrfqAXbuOow35sFQCYt7i",
+        "invoice_active": "1",
+        "currency_shortname": "THB",
+        "currency_fullname": "Thailand",
+        "currency_sign": "฿",
+        "client_name": "Doe Co",
+        "client_contact": "Johny Doe Doe",
+        "client_email": "john@doe.com",
+        "client_phone": "",
+        "client_fax": "",
+        "client_website": "",
+        "client_address": "",
+        "client_notes": "",
+        "client_default_currency": "THB"
+    },
+    {
+        "invoice_id": "5",
+        "client_id": "3",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 5",
+        "invoice_status": "past due",
+        "invoice_number": "5",
+        "invoice_po": "",
+        "invoice_date": "1432771200",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431820800",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "<tr><td>Item<\\/td><td><\\/td><td><\\/td><td><\\/td><td>700<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td><\\/td><td><\\/td><td><\\/td><td><\\/td><td>230<\\/td><\\/tr>",
+        "invoice_subtotal": "930.00",
+        "invoice_paidtodate": "0.00",
+        "invoice_balance": "930.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "XKFgy3LYweDAvBtor8Emixpf2h7NdZ",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "Andreas Liebrand",
+        "client_contact": "",
+        "client_email": "adreas@liebrand.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/andreasliebrand.com",
+        "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+        "client_notes": "Haven't heard back from Andreas regarding further work",
+        "client_default_currency": "USD"
+    },
+    {
+        "invoice_id": "4",
+        "client_id": "6",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 5",
+        "invoice_status": "paid",
+        "invoice_number": "4",
+        "invoice_po": "",
+        "invoice_date": "1424304000",
+        "invoice_public": "1",
+        "invoice_recurring": "1",
+        "invoice_duedate": "1432857600",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "Hihihi",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "<tr><td>item<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr>",
+        "invoice_subtotal": "1200.00",
+        "invoice_paidtodate": "1200.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "oJ5XvmtzSh6adDzoYNZD",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "Gu9Creative",
+        "client_contact": "",
+        "client_email": "info@gu9creative.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/gu9creative.com",
+        "client_address": "5 Eastgate House, Dogflud Way, Farnham\\\r\\\nSurrey, GU9 7UD UK",
+        "client_notes": "",
+        "client_default_currency": "USD"
+    },
+    {
+        "invoice_id": "2",
+        "client_id": "2",
+        "user_id": "1",
+        "currency_id": "1",
+        "invoice_title": "Invoice Number 2",
+        "invoice_status": "past due",
+        "invoice_number": "2",
+        "invoice_po": "",
+        "invoice_date": "1431609300",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431609300",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "",
+        "invoice_subtotal": "0.00",
+        "invoice_paidtodate": "220.00",
+        "invoice_balance": "-220.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "z9VQjRWGstXZSM1lPxEm",
+        "invoice_active": "1",
+        "currency_shortname": "USD",
+        "currency_fullname": "United States",
+        "currency_sign": "$",
+        "client_name": "The Clarion Portfolio",
+        "client_contact": "Sharon",
+        "client_email": "mjnaus@gmail.com",
+        "client_phone": "0123456789",
+        "client_fax": "0123456789",
+        "client_website": "http:\\/\\/clarion.com",
+        "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+        "client_notes": "Yeasjtyytj",
+        "client_default_currency": "USD"
+    }
+]</pre></code>
+					</p>
+					
+					<h4>GET (with "id" parameter set)</h4>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>GET /index.php/api/invoices/?X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&id=26 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 6adaa6e5-71cb-9524-0cc6-ca1c838bbf54
+</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>{
+    "invoice_id": "26",
+    "client_id": "4",
+    "user_id": "1",
+    "currency_id": "1",
+    "invoice_title": "Invoice Number 9",
+    "invoice_status": "due",
+    "invoice_number": "48",
+    "invoice_po": "",
+    "invoice_date": "1438230270",
+    "invoice_public": "1",
+    "invoice_recurring": "1",
+    "invoice_duedate": "1440201600",
+    "invoice_discount": "0",
+    "invoice_paymentbank": "1",
+    "invoice_paymentstripe": "1",
+    "invoice_paymentpaypal": "0",
+    "invoice_taxtype": "",
+    "invoice_taxamount": "0",
+    "invoice_topnote": "",
+    "invoice_bottomnote": "",
+    "invoice_notes": "",
+    "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+    "invoice_items_body": "<tr><td>Test<\\/td><td>Test<\\/td><td>10<\\/td><td>1<\\/td><td>10<\\/td><\\/tr>",
+    "invoice_subtotal": "10.00",
+    "invoice_paidtodate": "10.00",
+    "invoice_balance": "0.00",
+    "invoice_autogenerated": "1",
+    "invoice_code": "ScIowKTQsUHyejLRB846v0CdEJlFhN",
+    "invoice_active": "1",
+    "currency_shortname": "USD",
+    "currency_fullname": "United States",
+    "currency_sign": "$",
+    "client_name": "Call & Publicidad",
+    "client_contact": "",
+    "client_email": "mjnaus@gmail.com",
+    "client_phone": "0123456789",
+    "client_fax": "0123456789",
+    "client_website": "http:\\/\\/callandpublicidad.com",
+    "client_address": "",
+    "client_notes": "",
+    "client_default_currency": "USD",
+    "id": "1",
+    "company_id": "1",
+    "ip_address": "127.0.0.1",
+    "username": "administrator",
+    "password": "$2y$08$rXpXNHpQhMkj8V3UOZfLHOXMZKx7XEsJM518XtPafi4lOyp0.uqJW",
+    "salt": "",
+    "email": "mattijs@chillyorange.com",
+    "activation_code": "",
+    "forgotten_password_code": "5aRq-QQgEeIYC1aQkCg9ie73d0393f47159d26e8",
+    "forgotten_password_time": "1430541837",
+    "remember_code": "D7YyGluGAC8JHcC.qc7wfe",
+    "created_on": "1268889823",
+    "last_login": "1439173377",
+    "active": "1",
+    "first_name": "Mattijss",
+    "last_name": "Naus",
+    "company": null,
+    "phone": null,
+    "company_name": "Chilly Orange Co., Ltd.",
+    "company_logo": "",
+    "company_phone": "0123456789",
+    "company_fax": "0123456789",
+    "company_address": "325\\/6 Moo 4 Soi Mooban Chadkaew\\\r\\\nTambon Kuanlang Ampher Hatyai\\\r\\\nSongkhla 90110\\\r\\\nThailand",
+    "company_additionalinfo": ""
+}</pre></code>
+					</p>
+					
+					<h4>PUT</h4>
+					
+					<p>
+						The PUT request will attempt to create a new invoice. The following fields are required:
+					</p>
+					
+					<ul>
+						<li>clientID (should be a valid client ID)</li>
+					</ul>
+					
+					<p>
+						<b>Request sample:</b>
+						<code><pre>PUT /index.php/api/invoices/ HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 2df48676-1758-3cce-7af0-83da657e346a
+Content-Type: application/x-www-form-urlencoded
+
+X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&clientID=3</pre></code>
+					</p>
+					
+					<p>
+						<b>Response sample:</b>
+						<code><pre>{
+    "invoice_id": "28",
+    "client_id": "3",
+    "user_id": "1",
+    "currency_id": "1",
+    "invoice_title": "Invoice Number 50",
+    "invoice_status": "due",
+    "invoice_number": "50",
+    "invoice_po": "",
+    "invoice_date": "1439179894",
+    "invoice_public": "1",
+    "invoice_recurring": "0",
+    "invoice_duedate": "1439179894",
+    "invoice_discount": "0",
+    "invoice_paymentbank": "0",
+    "invoice_paymentstripe": "0",
+    "invoice_paymentpaypal": "0",
+    "invoice_taxtype": "",
+    "invoice_taxamount": "0",
+    "invoice_topnote": "",
+    "invoice_bottomnote": "",
+    "invoice_notes": "",
+    "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+    "invoice_items_body": "",
+    "invoice_subtotal": "0.00",
+    "invoice_paidtodate": "0.00",
+    "invoice_balance": "0.00",
+    "invoice_autogenerated": "0",
+    "invoice_code": "A8N6XEpsz4MVFjq173ZmSv2RKHTWgl",
+    "invoice_active": "1",
+    "currency_shortname": "USD",
+    "currency_fullname": "United States",
+    "currency_sign": "$",
+    "client_name": "Andreas Liebrand",
+    "client_contact": "",
+    "client_email": "adreas@liebrand.com",
+    "client_phone": "0123456789",
+    "client_fax": "0123456789",
+    "client_website": "http:\\/\\/andreasliebrand.com",
+    "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+    "client_notes": "Haven't heard back from Andreas regarding further work",
+    "client_default_currency": "USD",
+    "id": "1",
+    "company_id": "1",
+    "ip_address": "127.0.0.1",
+    "username": "administrator",
+    "password": "$2y$08$rXpXNHpQhMkj8V3UOZfLHOXMZKx7XEsJM518XtPafi4lOyp0.uqJW",
+    "salt": "",
+    "email": "mattijs@chillyorange.com",
+    "activation_code": "",
+    "forgotten_password_code": "5aRq-QQgEeIYC1aQkCg9ie73d0393f47159d26e8",
+    "forgotten_password_time": "1430541837",
+    "remember_code": "D7YyGluGAC8JHcC.qc7wfe",
+    "created_on": "1268889823",
+    "last_login": "1439173377",
+    "active": "1",
+    "first_name": "Mattijss",
+    "last_name": "Naus",
+    "company": null,
+    "phone": null,
+    "company_name": "Chilly Orange Co., Ltd.",
+    "company_logo": "",
+    "company_phone": "0123456789",
+    "company_fax": "0123456789",
+    "company_address": "325\\/6 Moo 4 Soi Mooban Chadkaew\\\r\\\nTambon Kuanlang Ampher Hatyai\\\r\\\nSongkhla 90110\\\r\\\nThailand",
+    "company_additionalinfo": ""
+}</pre></code>
+					</p>
+					
+					<h4>POST</h4>
+					
+					<p>
+						The POST request will attempt to update an existing invoice. The following fields are required:
+					</p>
+					
+					<ul>
+						<li>Invoice ID (appended to the url, for eample: /index.php/api/invoices/28)</li>
+						<li>invoice_client (client ID connected to this invoice, integer)</li>
+						<li>invoice_id (invoice number, integer)</li>
+						<li>invoice_issueDate (date in string format, must be an format accepted by the PHP functon "strtotime()")</li>
+						<li>invoice_duedate (date in string format, must be an format accepted by the PHP functon "strtotime()")</li>
+						<li>invoice_currenyName (three letter currency indicator, from "currencies" table, string)</li>
+					</ul>
+					
+					<p>
+						The following fields are optional:
+					</p>
+					
+					<ul>
+						<li>invoice_title (string)</li>
+						<li>invoice_status ("due", "past due" or "paid", string)</li>
+						<li>invoice_po (purchase order number, integer)</li>
+						<li>invoice_public (0 or 1, integer)</li>
+						<li>invoice_recurring (0 or 1, integer)</li>
+						<li>invoice_discountPercentage (integer)</li>
+						<li>invoice_taxType (string)</li>
+						<li>invoice_taxPercentage (integer)</li>
+						<li>invoice_topNote (text)</li>
+						<li>invoice_bottomNote (text)</li>
+						<li>invoice_notes (text)</li>
+						<li>invoice_items_head (should be the contents of the HEAD section of a HTML table, text)</li>
+						<li>invoice_items_body (should be the contents of the BODy section of a HTML table, text)</li>
+						<li>invoice_subTotal (integer)</li>
+						<li>invoice_paidToDate (integer)</li>
+						<li>invoice_balanceDue (integer)</li>
+					</ul>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>POST /index.php/api/invoices/28 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 38268b0a-89be-49e4-3ddd-174a4ed10a36
+Content-Type: application/x-www-form-urlencoded
+
+X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&invoice_client=3&invoice_id=51&invoice_issueDate=10+Aug+2015&invoice_duedate=10+Aug+2015&invoice_currenyName=USD</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>{
+    "invoice_id": "28",
+    "client_id": "3",
+    "user_id": "1",
+    "currency_id": "1",
+    "invoice_title": "",
+    "invoice_status": "",
+    "invoice_number": "51",
+    "invoice_po": "",
+    "invoice_date": "1439164800",
+    "invoice_public": "0",
+    "invoice_recurring": "0",
+    "invoice_duedate": "1439164800",
+    "invoice_discount": "0",
+    "invoice_paymentbank": "0",
+    "invoice_paymentstripe": "0",
+    "invoice_paymentpaypal": "0",
+    "invoice_taxtype": "",
+    "invoice_taxamount": "0",
+    "invoice_topnote": "",
+    "invoice_bottomnote": "",
+    "invoice_notes": "",
+    "invoice_items_head": "",
+    "invoice_items_body": "",
+    "invoice_subtotal": "0.00",
+    "invoice_paidtodate": "0.00",
+    "invoice_balance": "0.00",
+    "invoice_autogenerated": "0",
+    "invoice_code": "A8N6XEpsz4MVFjq173ZmSv2RKHTWgl",
+    "invoice_active": "1",
+    "currency_shortname": "USD",
+    "currency_fullname": "United States",
+    "currency_sign": "$",
+    "client_name": "Andreas Liebrand",
+    "client_contact": "",
+    "client_email": "adreas@liebrand.com",
+    "client_phone": "0123456789",
+    "client_fax": "0123456789",
+    "client_website": "http:\\/\\/andreasliebrand.com",
+    "client_address": "2 Great George Street, Godalming\\\r\\\nSurrey, GU7 1EE",
+    "client_notes": "Haven't heard back from Andreas regarding further work",
+    "client_default_currency": "USD",
+    "id": "1",
+    "company_id": "1",
+    "ip_address": "127.0.0.1",
+    "username": "administrator",
+    "password": "$2y$08$rXpXNHpQhMkj8V3UOZfLHOXMZKx7XEsJM518XtPafi4lOyp0.uqJW",
+    "salt": "",
+    "email": "mattijs@chillyorange.com",
+    "activation_code": "",
+    "forgotten_password_code": "5aRq-QQgEeIYC1aQkCg9ie73d0393f47159d26e8",
+    "forgotten_password_time": "1430541837",
+    "remember_code": "D7YyGluGAC8JHcC.qc7wfe",
+    "created_on": "1268889823",
+    "last_login": "1439173377",
+    "active": "1",
+    "first_name": "Mattijss",
+    "last_name": "Naus",
+    "company": null,
+    "phone": null,
+    "company_name": "Chilly Orange Co., Ltd.",
+    "company_logo": "",
+    "company_phone": "0123456789",
+    "company_fax": "0123456789",
+    "company_address": "325\\/6 Moo 4 Soi Mooban Chadkaew\\\r\\\nTambon Kuanlang Ampher Hatyai\\\r\\\nSongkhla 90110\\\r\\\nThailand",
+    "company_additionalinfo": ""
+}</pre></code>
+					</p>
+					
+					<h4>DELETE</h4>
+					
+					<p>
+						The DELETE request will attempt to delete an invoice. The following fields are required:
+					</p>
+					
+					<ul>
+						<li>Invoice ID (appended to the url, for example: /index.php/api/invoices/28)</li>
+					</ul>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>DELETE /index.php/api/invoices/28 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: 3fd73bb6-7dc4-b2a5-037f-6bb89a06f036
+Content-Type: application/x-www-form-urlencoded
+
+X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&invoice_client=3&invoice_id=51&invoice_issueDate=10+Aug+2015&invoice_duedate=10+Aug+2015&invoice_currenyName=USD</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>{
+    "id": 28,
+    "message": "Deleted the invoice"
+}</pre></code>
+					</p>
+					
+				</div><!-- /#api_invoices -->
+				
+				<div class="section" id="api_payments">
+					
+					<h2>7.4 Payments</h2>
+					
+					<h4>GET</h4>
+					
+					<p>
+						The GET request returns either the payments for a specific invoice OR for a specific client, depending on which value is set for the "getFor" parameter. The following fields are required:
+					</p>
+					
+					<ul>
+						<li>getFor (either "client" OR "invoice")</li>
+						<li>client_id (valid client ID, if "getFor" is set to "client")</li>
+						<li>invoice_id (valid invoice ID, if "getFor" is set to "invoice")</li>
+					</ul>
+					
+					<p>
+						<b>Request example:</b>
+						<code><pre>GET /index.php/api/payments/?X-API-KEY=ccbd961a9a83ac4c1469485f074e4274&getFor=client&client_id=2 HTTP/1.1
+Host: demo.Innvoice.io
+Cache-Control: no-cache
+Postman-Token: dff3b70c-2cc4-0694-57e9-7ded02055ecb
+</pre></code>
+					</p>
+					
+					<p>
+						<b>Response example:</b>
+						<code><pre>[
+    {
+        "payment_id": "1",
+        "invoice_id": "2",
+        "payment_amount": "220.00",
+        "payment_date": "1426338900",
+        "payment_proof": "",
+        "payment_type": "Bank",
+        "payment_active": "1",
+        "client_id": "2",
+        "user_id": "1",
+        "currency_id": "USD",
+        "invoice_title": "Invoice Number 2",
+        "invoice_status": "past due",
+        "invoice_number": "2",
+        "invoice_po": "",
+        "invoice_date": "1431609300",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431609300",
+        "invoice_discount": "0",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "",
+        "invoice_taxamount": "0",
+        "invoice_topnote": "",
+        "invoice_bottomnote": "",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Description<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Item Price<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th>Quantity<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<th style=\"width: 140px\">Total<\\/th>\\\n\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<\\/tr>",
+        "invoice_items_body": "",
+        "invoice_subtotal": "0.00",
+        "invoice_paidtodate": "220.00",
+        "invoice_balance": "-220.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "z9VQjRWGstXZSM1lPxEm",
+        "invoice_active": "1",
+        "payment_type_id": "1",
+        "payment_requires_proof": "1"
+    },
+    {
+        "payment_id": "33",
+        "invoice_id": "3",
+        "payment_amount": "1000.00",
+        "payment_date": "1432965674",
+        "payment_proof": "9B7iMzbE2dchXpCQDNRTPn3Zr.pdf",
+        "payment_type": "Bank",
+        "payment_active": "1",
+        "client_id": "2",
+        "user_id": "1",
+        "currency_id": "USD",
+        "invoice_title": "Invoice Number 3",
+        "invoice_status": "paid",
+        "invoice_number": "26",
+        "invoice_po": "12345",
+        "invoice_date": "1431622800",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431536400",
+        "invoice_discount": "10",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "VAT",
+        "invoice_taxamount": "20",
+        "invoice_topnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_bottomnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr><th>Item<\\/th><th>Description<\\/th><th>Item price<\\/th><th>Amount<\\/th><th>Total<\\/th><\\/tr>",
+        "invoice_items_body": "<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item eight<\\/td><td>Description<\\/td><td>400<\\/td><td>2<\\/td><td>800<\\/td><\\/tr>\\\n<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>",
+        "invoice_subtotal": "8800.00",
+        "invoice_paidtodate": "9504.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "k2ILnZxxWPn0N1n4Ud2i",
+        "invoice_active": "1",
+        "payment_type_id": "1",
+        "payment_requires_proof": "1"
+    },
+    {
+        "payment_id": "34",
+        "invoice_id": "3",
+        "payment_amount": "1000.00",
+        "payment_date": "1432965760",
+        "payment_proof": "E0IRtNTjhSBdDZmXkK5Ur2fMy.pdf",
+        "payment_type": "Bank",
+        "payment_active": "1",
+        "client_id": "2",
+        "user_id": "1",
+        "currency_id": "USD",
+        "invoice_title": "Invoice Number 3",
+        "invoice_status": "paid",
+        "invoice_number": "26",
+        "invoice_po": "12345",
+        "invoice_date": "1431622800",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431536400",
+        "invoice_discount": "10",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "VAT",
+        "invoice_taxamount": "20",
+        "invoice_topnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_bottomnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr><th>Item<\\/th><th>Description<\\/th><th>Item price<\\/th><th>Amount<\\/th><th>Total<\\/th><\\/tr>",
+        "invoice_items_body": "<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item eight<\\/td><td>Description<\\/td><td>400<\\/td><td>2<\\/td><td>800<\\/td><\\/tr>\\\n<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>",
+        "invoice_subtotal": "8800.00",
+        "invoice_paidtodate": "9504.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "k2ILnZxxWPn0N1n4Ud2i",
+        "invoice_active": "1",
+        "payment_type_id": "1",
+        "payment_requires_proof": "1"
+    },
+    {
+        "payment_id": "35",
+        "invoice_id": "3",
+        "payment_amount": "7504.00",
+        "payment_date": "1432965896",
+        "payment_proof": "IpOS5qve7zZjyHD2RE9fgMVTk.pdf",
+        "payment_type": "Bank",
+        "payment_active": "1",
+        "client_id": "2",
+        "user_id": "1",
+        "currency_id": "USD",
+        "invoice_title": "Invoice Number 3",
+        "invoice_status": "paid",
+        "invoice_number": "26",
+        "invoice_po": "12345",
+        "invoice_date": "1431622800",
+        "invoice_public": "1",
+        "invoice_recurring": "0",
+        "invoice_duedate": "1431536400",
+        "invoice_discount": "10",
+        "invoice_paymentbank": "0",
+        "invoice_paymentstripe": "0",
+        "invoice_paymentpaypal": "0",
+        "invoice_taxtype": "VAT",
+        "invoice_taxamount": "20",
+        "invoice_topnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_bottomnote": "Duis pulvinar dui a mi lobortis, nec scelerisque orci facilisis. Proin ullamcorper viverra interdum. Fusce id nibh sit amet ligula ultrices blandit. Morbi viverra nec dui eu semper. Maecenas vulputate blandit ante at fermentum.",
+        "invoice_notes": "",
+        "invoice_items_head": "<tr><th>Item<\\/th><th>Description<\\/th><th>Item price<\\/th><th>Amount<\\/th><th>Total<\\/th><\\/tr>",
+        "invoice_items_body": "<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item eight<\\/td><td>Description<\\/td><td>400<\\/td><td>2<\\/td><td>800<\\/td><\\/tr>\\\n<tr><td>Item one<\\/td><td>test description<\\/td><td>200<\\/td><td>4<\\/td><td>800<\\/td><\\/tr><tr><td>Item two<\\/td><td>test description<\\/td><td>500<\\/td><td>2<\\/td><td>100<\\/td><\\/tr><tr><td>Item three<\\/td><td>test description<\\/td><td>100<\\/td><td>8<\\/td><td>100<\\/td><\\/tr>\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t\\\t<tr><td>Item four<\\/td><td><\\/td><td><\\/td><td><\\/td><td>600<\\/td><\\/tr><tr><td>Item five<\\/td><td><\\/td><td><\\/td><td><\\/td><td>1200<\\/td><\\/tr><tr><td>Item seven<\\/td><td>Description<\\/td><td>400<\\/td><td>3<\\/td><td>1200<\\/td><\\/tr>",
+        "invoice_subtotal": "8800.00",
+        "invoice_paidtodate": "9504.00",
+        "invoice_balance": "0.00",
+        "invoice_autogenerated": "0",
+        "invoice_code": "k2ILnZxxWPn0N1n4Ud2i",
+        "invoice_active": "1",
+        "payment_type_id": "1",
+        "payment_requires_proof": "1"
+    }
+]</pre></code>
+					</p>
+					
+				</div><!-- /#api_payments -->
+				
+				<div class="section" id="configurationsettigns">
+					
+					<h2>8 Configuration & Settings</h2>
+					
+					<p>
+						This section explains the different settings and configuration options available in Invoice.
+					</p>
+					
+				</div><!-- /#configurationsettigns -->
+				
+				<div class="section" id="applicationsettings">
+					
+					<h2>8.1 Application Settings</h2>
+					
+					<p>
+						The Application Settings are accessed by clicking the "Account Functions" link, and then selecting "Application Settings" from the drop down menu. Below we'll briefly discuss the available settings.
+					</p>
+					
+					<ul>
+						<li>
+							<b>Internal invoice counter</b><br>
+							This counter is used to automatically generate invoice numbers when creating new invoices. The current value of this counter represents the last issued invoice number and the next new invoice will have the current value + 1 as it's invoice number.
+						</li>
+						<li>
+							<b>Payment integration: Stripe</b><br>
+							To integrate Strip with Invoice, you will need to provide your public and private Stripe keys here.
+						</li>
+						<li>
+							<b>Payment integration: Paypal</b><br>
+							To integrate Paypal with Invoice, you will need to provide your main Paypal account email here.
+						</li>
+						<li>
+							<b>API</b><br>
+							This setting allows you to enable/disable the API. When disabled, no API requests can be made.
+						</li>
+					</ul>
+					
+				</div><!-- /#applicationsettings -->
+				
+				<div class="section" id="configurationfile">
+					
+					<h2>8.2 Configuration File</h2>
+					
+					<p>
+						The majority of the application settings are found in the configuration file "<b>/application/config/Innvoice.php</b>". Below we'll discuss the available configuration options:
+					</p>
+					
+					<ul>
+						<li>
+							<b>default_currency</b><br>
+							The default currency for the entire application. This has to be a value from the "currencies" table.
+						</li>
+						<li>
+							<b>date_format_php</b><br>
+							The date format used by PHP. This should be a string acceepted by the PHP function "strtotime()". The available options are listed inside the configuration file.
+						</li>
+						<li>
+							<b>date_format_js</b><br>
+							The date format used by Javascript. This should be a string acceepted by the JS function "Date.parse()". The available options are listed inside the configuration file.
+						</li>
+						<li>
+							<b>dashboard_donut_colors</b><br>
+							Color codes used to generate the donut charts on the dashboard and client overview pages. The first color is the main one, the second is the hover color. This array can contain as many color combinations as you think you might need.
+						</li>
+						<li>
+							<b>invoice_itemtable_default_head</b><br>
+							The default structure for the heading of HTML table containing items on your invoice. This structure will be used when creating a new invoice, once created this can be overwritten from within the application.
+						</li>
+						<li>
+							<b>export_filename_prepend</b><br>
+							Used to generate the file name when generating an invoice PDF. The invoice number is automatically appended. 
+						</li>
+						<li>
+							<b>export_report_prepend</b><br>
+							Used to generate the file name when generating an report PDF. The report ID is automatically appended. 
+						</li>
+						<li>
+							<b>email_from_address</b><br>
+							The "from" email address used when the application sends out emails.
+						</li>
+						<li>
+							<b>email_from_name</b><br>
+							The "from" name used when the application sends out emails.
+						</li>
+						<li>
+							<b>email_default_subject</b><br>
+							The default email subject for emailing invoices to clients. This setting can be overwritten from within the application.
+						</li>
+						<li>
+							<b>email_default_content</b><br>
+							The default email body content for emailing invoices to clients. This setting can be overwritten from within the application
+						</li>
+						<li>
+							<b>email_payment_company_subject</b><br>
+							The email subject for the confirmation email send to application owner when a payment is received.
+						</li>
+						<li>
+							<b>email_payment_client_subject</b><br>
+							The email subject for the conformation email send to client when payment was successfully processed.
+						</li>
+						<li>
+							<b>email_new_recurring_subject</b><br>
+							The email subject for the confirmation email send to client when a new recurring invoice is generated.
+						</li>
+					</ul>
+					
+				</div><!-- /#configurationfile -->
+				
+				<div class="section" id="email_configuration">
+					
+					<h2>8.3 Email Configuration</h2>
+					
+					<p>
+						Below you will find a description of the settings avaialble in "<b>/application/config/email.php</b>"
+					</p>
+					
+					<ul>
+						<li>
+							<b>useragent</b><br>
+							The “user agent” string in the email header - string
+						</li>
+						<li>
+							<b>protocol</b><br>
+							The mail sending protocol. One of the following options: "mail", "sendmail", or "smtp" - string
+						</li>
+						<li>
+							<b>mailpath</b><br>
+							The server path to Sendmail (only applies when "protocol" is set to "sendmail") - string
+						</li>
+						<li>
+							<b>smtp_host</b><br>
+							SMTP Server Address (only applies when "protocol" is set to "smtp") - string
+						</li>
+						<li>
+							<b>smtp_user</b><br>
+							SMTP Username (only applies when "protocol" is set to "smtp") - string
+						</li>
+						<li>
+							<b>smtp_pass</b><br>
+							SMTP Password (only applies when "protocol" is set to "smtp") - string
+						</li>
+						<li>
+							<b>smtp_port</b><br>
+							SMTP Port (only applies when "protocol" is set to "smtp") - integer
+						</li>
+						<li>
+							<b>smtp_timeout</b><br>
+							SMTP Timeout (in seconds, only applies when "protocol" is set to "smtp") - integer
+						</li>
+						<li>
+							<b>smtp_keepalive</b><br>
+							Enable persistent SMTP connections (only applies when "protocol" is set to "smtp") - boolean (true of false)
+						</li>
+						<li>
+							<b>smtp_crypto</b><br>
+							SMTP Encryption, one of the following options: "ssl" or "tls" (only applies when "protocol" is set to "smtp") - string
+						</li>
+						<li>
+							<b>wordwrap</b><br>
+							Enable word-wrap - boolean (true of false)
+						</li>
+						<li>
+							<b>wrapchars</b><br>
+							Character count to wrap at - integer
+						</li>
+						<li>
+							<b>mailtype</b><br>
+							Type of mail. If you send HTML email you must send it as a complete web page. Make sure you don’t have any relative links or relative image paths otherwise they will not work. One of the following options "html" or "text" - string
+						</li>
+						<li>
+							<b>validate</b><br>
+							Whether to validate the email address - boolean (true or false)
+						</li>
+						<li>
+							<b>priority</b><br>
+							Email Priority. 1 = highest. 5 = lowest. 3 = normal. One of the following options: 1, 2, 3, 4 or 5 - integer
+						</li>
+						<li>
+							<b>crlf</b><br>
+							Newline character. (Use “\r\n” to comply with RFC 822). One of the following options: “\r\n” or “\n” or “\r” - string
+						</li>
+						<li>
+							<b>newline</b><br>
+							Newline character. (Use “\r\n” to comply with RFC 822). One of the following options: “\r\n” or “\n” or “\r” - string
+						</li>
+						<li>
+							<b>bcc_batch_mode</b><br>
+							Enable BCC Batch Mode - boolean (true or false)
+						</li>
+						<li>
+							<b>bcc_batch_size</b><br>
+							Number of emails in each BCC batch - integer
+						</li>
+						<li>
+							<b>dsn</b><br>
+							Enable notify message from server - boolean (true or false)
+						</li>
+					</ul>
+					
+				</div><!-- /#configurationfile -->
+                
+                <div class="section" id="translation">
+                
+                    <h2>8.4 Translation</h2>
+                    
+                    <p>
+                        Innvoice is fully translation ready, meaning all text such as labels, etc are stored in language files. The default language (English) files are stored in <b>/application/language/english/</b>.
+                    </p>
+                    
+                    <p>
+                        To implement another language, German for example, you will need to start by copying all the files found in <b>/application/language/english/</b> to <b>/application/langauge/german/</b>. In addition, you will need to grab a copy of <b>/system/language/english/form_validation_lang.php</b> and place it in <b>/application/language/german/</b>.
+                    </p>
+                    
+                    <p>
+                        You can now proceed to start translatng the langauge files. Most of the translation work should be done on the file named "innvoice_lang.php". The last step of this process is editing <b>/application/config/config.php</b> and change the language setting to "german".
+                    </p>
+                
+                </div><!-- /#translation -->
+				
+				<div class="section" id="cron">
+					
+					<h2>9 Cron</h2>
+					
+					<p>
+						For the Innvoice application to function properly, certain tasks need to be performed automatically on a daily basis, this includes things like checking whether invoices are now past due and generating new invoices for a recurring invoice.
+					</p>
+					
+					<p>
+						For these tasks to run daily, the following URL should be called once every 24 hours: <b>http://yourdomain.com/index.php/cron/</b> (obviously you will need to change "yourdomain.com" to the correct domain name). If you have access to cpanel and your account has Cron Jobs activated (look under "Advanced > Cron Jobs"), you can add in a cron job to run once every 24 hours with one of the following commands:
+					</p>
+					
+					<ul>
+						<li>wget -qO- http://yourdomain.com/index.php/cron &> /dev/null</li>
+						<li>/path/to/application/index.php cron</li>
+					</ul>
+					
+					<p>
+						If you are not allowed to create cron jobs, you might want to use an external cron provider to ping the cron URL once every 24 hours. A quick Google search for "cron as a service" will reveal a number of options.
+					</p>
+					
+				</div><!-- /#cron -->
+                
+                <div class="section" id="upgrading">
+					
+					<h2>Upgrading</h2>
+					
+					<p>
+                        When upgrading your copy of Innvoice, the process typically involves two steps: updating the files AND updating the database.
+                    </p>
+                    
+                    <p>
+                        When updating the files, make sure you overwrite the following folders:
+                    </p>
+                    
+                    <ul>
+                    	<li>
+                    		/index.php
+                    	</li>
+                    	<li>
+                    		/ci_3.x.x (make sure this corresponds with the <b>$system_path</b> variable in /index.php)
+                    	</li>
+                        <li>
+                            /css
+                        </li>
+                        <li>
+                            /js
+                        </li>
+                        <li>
+                            /application/controllers
+                        </li>
+                        <li>
+                            /application/helpers
+                        </li>
+                        <li>
+                            /application/language/english
+                        </li>
+                        <li>
+                            /application/libraries
+                        </li>
+                        <li>
+                            /application/migrations
+                        </li>
+                        <li>
+                            /application/models
+                        </li>
+                        <li>
+                            /application/views
+                        </li>
+                    </ul>
+                    
+                    <p>
+                        Next, you will need to update the database. Innvoice makes use of so called "migrations" to update the database. This way, you won't have to manually mess around with SQL. First, you will need to edit <b>/application/config/migration.php</b> and set "$config['migration_enabled']" to TRUE.
+                    </p>
+                    
+                    <p>
+                        Now you will need to load the <b>migrate</b> controller in your browser by opening the following URL: <b>http://mywebsite.com/index.php/migrate</b>. Be sure to replace "http://mywebsite.com" with your site's actual URL (in addition, you might need to remove "index.php" if you have configured your site to use pretty URLs). You should now see a confirmation message saying your database is up to date.
+                    </p>
+                    
+                    <p>
+                        That's it, you're all up to date. If you experience any trouble while updating, please submit a ticket through <a href="http://selfhosted.net" target="_blank">http://selfhosted.net/support/</a> and we'll be more then happy to assist you!
+                    </p>
+					
+				</div><!-- /#upgrading -->
+    		
+    		</div><!-- /.col -->
+    	
+    	</div><!-- /.row -->
+    
+    </div><!-- /.container -->
+    
+    <!-- /.end modals -->
+
+    <!-- jQuery (necessary for Flat UI's JavaScript plugins) -->
+    <script src="js/vendor/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/flat-ui-pro.min.js"></script>
+    <script>
+    $(function(){
+    
+    	$('#nav').width( $('#nav').width() )
+	    
+	    $('#nav a').click(function(){
+		    
+		    $(this).closest('#nav').find('li').removeClass('active');
+		    
+		    $(this).parent().addClass('active');
+		    
+	    })
+	    
+    })
+    </script>
+  </body>
+</html>

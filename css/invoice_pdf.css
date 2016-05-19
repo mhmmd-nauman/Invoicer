@@ -1,0 +1,79 @@
+body {
+	padding: 20px;
+	font-family: Arial, sans-serif;
+	line-height: 21px;
+	color: #000;
+	font-size: 16px;
+}
+
+.invoiceWrapper {
+	margin-bottom: 75px;
+}
+
+.invoiceTable h1 {
+	font-size: 28px;
+}
+
+.invoiceTable h2 {
+	font-size: 24px;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table th, table td {
+	padding: 7px 10px;
+	text-align: left;
+}
+
+table th:last-child, table td:last-child {
+	text-align: right;
+}
+
+.invoiceWrapper, .invoiceTable, .totalsTable {
+	width: 100%;
+}
+
+.invoiceTable .status {
+	text-transform: uppercase;
+	font-size: 20px;
+}
+
+.invoiceTable .status.due {
+	color: #3498DB;
+}
+
+.invoiceTable .status.past-due {
+	color: #E74C3C;
+}
+
+.invoiceTable .status.paid {
+	color: #1ABC9C;
+}
+
+.totalsTable {
+	margin-top: 40px;
+}
+
+.itemsTable {
+	width: 100%;
+}
+
+.itemsTable th, .itemsTable td {
+	border-bottom: 2px solid #ddd;
+}
+
+table th {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.bottomNotes {
+	margin-top: 40px;
+	padding-top: 10px;
+	border-top: 2px solid #ddd;
+}

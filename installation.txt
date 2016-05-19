@@ -1,0 +1,15 @@
+Hi there and thanks for purchasing Innvoice! If you need assistance at any point, please don't hesitate to contact our help desk at support@chillyorange.com. 
+
+Below you will find the installation instructions to get Innvoice up and running. Additional documentation regarding usage of the application can be found in the "Documentation" section after logging in. Alternatively, you can read the documentation online at http://docs.selfhosted.net/innvoice/.
+
+INSTALLATION INSTRUCTIONS
+
+1. Upload the unzipped files to your web hosting.
+
+2. Create a new and empty MySQL database (make sure you give this database a UTF-8 encoding!!!) and note down the MySQL user name and password (as you will need these in the next step).
+
+3. Navigate your browser to the /install/ folder (for example, if you have uploaded the application to http://mydomain.com/, you would need to open http://mydomain.com/install/)
+
+4. Follow the instructions on the installation page and complete the form
+
+5. That's it! Log in and enjoy the application!
