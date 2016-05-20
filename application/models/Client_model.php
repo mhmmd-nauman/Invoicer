@@ -9,7 +9,7 @@ class Client_model extends CI_Model {
     }
     
     
-    public function getAll($userID = false) {
+    public function getAll($userID = false,$owner=0) {
 		
 		$this->db->select('*');
 		$this->db->select("IFNULL((SELECT SUM(invoices.invoice_paidtodate) FROM invoices WHERE invoices.client_id = clients.client_id && invoices.invoice_active = '1' && invoices.currency_id = clients.client_default_currency), 0) as 'total_paid'");
@@ -19,10 +19,13 @@ class Client_model extends CI_Model {
 		$this->db->order_by('client_name', 'ASC');
 		$this->db->join('currencies', 'clients.client_default_currency = currencies.currency_shortname');
 		
-    	
+    	        
 		if( $userID ) {
-			
-			$this->db->where('user_id', $userID);
+                    if(empty($owner)){
+                        $this->db->where('user_id', $userID);
+                    }else{
+                        $this->db->where('user_id', $owner);
+                    }
 			
 		}
 		
@@ -80,6 +83,15 @@ class Client_model extends CI_Model {
 	
 	public function getClient($clientID, $userID = false) {
 		
+                $this->db->from('users');
+                $this->db->select("*");
+                $this->db->where('id', $userID);
+                $q = $this->db->get();
+                $user = $q->result();
+                if($user[0]->owner){
+                    $userID=$user[0]->owner;
+                }
+            
 		$this->db->from('clients');
 		$this->db->select("*");
 		//$this->db->select("IFNULL((SELECT SUM(invoices.invoice_paidtodate) FROM invoices WHERE invoices.client_id = clients.client_id), 0) as 'total_paid'");
@@ -89,8 +101,10 @@ class Client_model extends CI_Model {
 		$this->db->join('currencies', 'clients.client_default_currency = currencies.currency_shortname');
 		
 		if( $userID ) {
-			
-			$this->db->where('user_id', $userID);
+                    
+                    
+                    $this->db->where('user_id', $userID);
+                    
 			
 		}
 		
@@ -133,7 +147,14 @@ class Client_model extends CI_Model {
 	
 	
 	public function create($data, $userID) {
-		
+		$this->db->from('users');
+                $this->db->select("*");
+                $this->db->where('id', $userID);
+                $q = $this->db->get();
+                $user = $q->result();
+                if($user[0]->owner){
+                    $userID=$user[0]->owner;
+                }
 		$cdata = array(
 			'user_id' => $userID,
 			'client_name' => $data['field_clientName'],

@@ -52,10 +52,10 @@
 			<button class="btn btn-default navbar-btn btn-sm addClientButton" type="button" data-target="#modal_newClient" data-toggle="modal"><span class="fui-plus"></span> 
 				<?php echo $this->lang->line('add_client');?>
 			</button>
-			
+                    
             <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
             	<li class="dropdown">
-                	<a href="#" class="dropdown-toggle" data-toggle="dropdown"><?php echo $this->lang->line('account_functions');?> <b class="caret"></b></a>
+                	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <?php echo $this->ion_auth->user()->row()->first_name." ".$this->ion_auth->user()->row()->last_name;?> <b class="caret"></b></a>
                 	<ul class="dropdown-menu">
  					   	<li><a href="#modal_account" data-toggle="modal"><?php echo $this->lang->line('my_account_and_company');?></a></li>
 						<li><a href="#modal_apikeys" data-toggle="modal"><?php echo $this->lang->line('api_keys');?></a></li>

@@ -23,15 +23,16 @@ class Clients extends CI_Controller {
 		$this->data['user'] = $this->ion_auth->user()->row();
 		$this->user = $this->ion_auth->user()->row();
 		
-		$this->data['clients'] = $this->client_model->getAll( $this->data['user']->id );
-		$this->data['allCurrencies'] = $this->currency_model->getAll();
+		$this->data['clients'] = $this->client_model->getAll( $this->data['user']->id, $this->data['user']->owner );
+		//$this->output->enable_profiler(FALSE);
+                $this->data['allCurrencies'] = $this->currency_model->getAll();
 		$this->data['settings'] = $this->settings_model->getAll( $this->data['user']->id );
 		$this->data['keys'] = $this->api_model->getKeys();
 		
 	}
 
 	public function index() {
-		
+		//$this->output->enable_profiler(TRUE);
 		$this->data['page'] = 'clients';
 				
 		$this->load->view('clients', $this->data);
