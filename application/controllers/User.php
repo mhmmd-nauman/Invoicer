@@ -30,6 +30,11 @@ class User extends CI_Controller {
 	*/
         public function createEmployee($userID=0){
             
+            if( $this->ion_auth->in_group(array(2)) && !$this->ion_auth->is_admin()){
+                $userID =$this->ion_auth->user()->row()->id;
+            }
+            
+                    
             $this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required');
             //$this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required');
             $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email');
@@ -90,7 +95,7 @@ class User extends CI_Controller {
 		$return = array();//return array
 		
 		//userID check
-		if( $userID == 0 || $userID != $this->user->id ) {
+		if( $userID == 0  ) {
 			
 			$return['code'] = 0;
 			
@@ -99,16 +104,19 @@ class User extends CI_Controller {
 			$alert['alertContent'] = $this->lang->line('user_updateaccount_error1');
 			
 			$return['content'] = $this->load->view('alerts/alert_error', $alert, true);
-			
-			die( json_encode( $return ) );
+			$this->session->set_flashdata('message', $alert );
+			redirect('/users/'.$userID, 'refresh');
 			
 		}
 		
 		//validate the form
 		
 		$this->form_validation->set_rules('field_email', $this->lang->line('username_label'), 'required|valid_email');
-		$this->form_validation->set_rules('field_newpassword', $this->lang->line('new_password_label'), 'required');
-		$this->form_validation->set_rules('field_newpassword2', $this->lang->line('new_password_confirmation_label'), 'required|matches[field_newpassword]');
+		$this->form_validation->set_rules('field_first_name', $this->lang->line('edit_user_validation_fname_label'), 'required');
+		$this->form_validation->set_rules('field_last_name', $this->lang->line('edit_user_validation_lname_label'), 'required');
+		
+                //$this->form_validation->set_rules('field_newpassword', $this->lang->line('new_password_label'), 'required');
+		//$this->form_validation->set_rules('field_newpassword2', $this->lang->line('new_password_confirmation_label'), 'required|matches[field_newpassword]');
 		
 		if ($this->form_validation->run() == FALSE) {//validation failed
 			
@@ -119,8 +127,8 @@ class User extends CI_Controller {
 			$alert['alertContent'] = $this->lang->line('user_updateaccount_error2').validation_errors();
 			
 			$return['content'] = $this->load->view('alerts/alert_error', $alert, true);
-			
-			die( json_encode( $return ) );
+			$this->session->set_flashdata('message', $alert );
+			redirect('/users/'.$userID, 'refresh');
 
 		} else {//validation successfull
 			
@@ -128,7 +136,11 @@ class User extends CI_Controller {
 			
 			$data = array(
 				'email' => $_POST['field_email'],
-				'password' => $_POST['field_newpassword']
+				'first_name' => $_POST['field_first_name'],
+                                'last_name' => $_POST['field_last_name'],
+                                'phone' => $_POST['field_phone'],
+                                'company' => $_POST['field_company'],
+                                'webaddress' => $_POST['field_web_address']
 			);
 			
 			$change = $this->ion_auth->update($userID, $data);
@@ -143,7 +155,8 @@ class User extends CI_Controller {
 			
 				$return['content'] = $this->load->view('alerts/alert_success', $alert, true);
 			
-				die( json_encode( $return ) );
+				$this->session->set_flashdata('message', $alert );
+                                redirect('/users/'.$userID, 'refresh');
 				
 			} else {
 				
@@ -155,7 +168,8 @@ class User extends CI_Controller {
 			
 				$return['content'] = $this->load->view('alerts/alert_error', $alert, true);
 			
-				die( json_encode( $return ) );
+				$this->session->set_flashdata('message', $alert );
+                                redirect('/users/'.$userID, 'refresh');
 				
 			}
 			

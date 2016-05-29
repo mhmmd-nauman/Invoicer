@@ -799,7 +799,11 @@ class Auth extends CI_Controller {
                 $this->data['employees'] = $this->user_model->getEmployee($theUser->id);
                 
             }
-            $this->data['users'] = $this->user_model->getAll();
+            if($this->ion_auth->is_admin()){
+                $this->data['users'] = $this->user_model->getAll();
+            }elseif($this->ion_auth->in_group(array(2))){
+                $this->data['users'] = $this->user_model->getEmployee($this->ion_auth->user()->row()->id);
+            }
             $this->load->view('users', $this->data);
             
         }

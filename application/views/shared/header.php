@@ -52,6 +52,11 @@
 			<button class="btn btn-default navbar-btn btn-sm addClientButton" type="button" data-target="#modal_newClient" data-toggle="modal"><span class="fui-plus"></span> 
 				<?php echo $this->lang->line('add_client');?>
 			</button>
+                    <?php if( $this->ion_auth->in_group(array(2))){?>
+                    <button class="btn btn-default navbar-btn btn-sm addClientButton" type="button" data-target="#modal_newEmployee" data-toggle="modal"><span class="fui-plus"></span> 
+                            Add Employee
+                    </button>
+                    <?php } ?>
                     
             <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
             	<li class="dropdown">
@@ -76,7 +81,7 @@
 	    	<li <?php if( isset($page) && $page == 'invoices' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('invoices');?>" class="fui-document" title="<?php echo $this->lang->line('invoices');?>"></a></li>
 	    	<li <?php if( isset($page) && $page == 'clients' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('clients');?>" class="fui-user" title="<?php echo $this->lang->line('clients');?>"></a></li>
 	    	<li <?php if( isset($page) && $page == 'reports' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('reports');?>" class="fa fa-calculator" title="<?php echo $this->lang->line('reports');?>"></a></li>
-		<?php if ($this->ion_auth->is_admin()){?>
+		<?php if ($this->ion_auth->is_admin() || $this->ion_auth->in_group(array(2))){?>
                     <li <?php if( isset($page) && $page == 'users' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('users');?>" class="fui-user" title="Users"></a></li>
                 <?php }?>
                 <li <?php if( isset($page) && $page == 'documentation' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('documentation');?>" class="fa fa-life-ring" title="<?php echo $this->lang->line('documentation')?>"></a></li>

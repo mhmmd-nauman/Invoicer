@@ -65,11 +65,13 @@
 					<!-- Nav tabs -->
 				  	<ul class="nav nav-tabs nav-append-content" role="tablist">
 					<li role="presentation" <?php if($active_tab==""){?>class="active"<?php }?>><a href="#clientOverview" aria-controls="clientOverview" role="tab" data-toggle="tab"><span class="fa fa-tachometer"></span> User Details</a></li>
-				    	<li role="presentation" <?php if($active_tab=="groups"){?>class="active"<?php }?>><a href="#clientGroups" aria-controls="clientGroups" role="tab" data-toggle="tab"><span class="fa fa-tachometer"></span> Groups</a></li>
+				    	<?php if ($this->ion_auth->is_admin()){?>
+                                        <li role="presentation" <?php if($active_tab=="groups"){?>class="active"<?php }?>><a href="#clientGroups" aria-controls="clientGroups" role="tab" data-toggle="tab"><span class="fa fa-tachometer"></span> Groups</a></li>
 				    	<li role="presentation" <?php if($active_tab=="active_employee"){?>class="active"<?php }?>><a href="#clientEmployee" aria-controls="clientEmployee" role="tab" data-toggle="tab"><span class="fa fa-tachometer"></span> Employees</a></li>
+                                        <?php }?>
                                         </ul>
 					
-					<form class="form-horizontal" method="post" action="<?php echo site_url('users/update/'.$theUser->id);?>" data-toggle="validator">
+					<form class="form-horizontal" method="post" action="<?php echo site_url('user/updateAccount/'.$theUser->id);?>" data-toggle="validator">
 
 				  	<!-- Tab panes -->
 				  	<div class="tab-content">
@@ -81,39 +83,39 @@
                                                             <div class="form-group">
                                                                 <label for="field_clientName" class="col-sm-3 control-label">First Name:<span class="text-danger">*</span></label>
                                                                 <div class="col-sm-9">
-                                                                        <input type="text" class="form-control" id="field_clientName" name="field_clientName" placeholder="First Name" value="<?php echo $theUser->first_name;?>" required data-error="<?php echo $this->lang->line('client_name_error');?>">
+                                                                        <input type="text" class="form-control" id="field_clientName" name="field_first_name" placeholder="First Name" value="<?php echo $theUser->first_name;?>" required data-error="<?php echo $this->lang->line('client_name_error');?>">
                                                                         <div class="help-block with-errors"></div>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label for="field_clientName" class="col-sm-3 control-label">Last Name:<span class="text-danger">*</span></label>
                                                                 <div class="col-sm-9">
-                                                                        <input type="text" class="form-control" id="field_clientName" name="field_clientName" placeholder="Last Name" value="<?php echo $theUser->last_name;?>" required data-error="<?php echo $this->lang->line('client_name_error');?>">
+                                                                        <input type="text" class="form-control" id="field_clientName" name="field_last_name" placeholder="Last Name" value="<?php echo $theUser->last_name;?>" required data-error="<?php echo $this->lang->line('client_name_error');?>">
                                                                         <div class="help-block with-errors"></div>
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
                                                                     <label for="field_clientContact" class="col-sm-3 control-label">Phone:</label>
                                                                     <div class="col-sm-9">
-                                                                            <input type="text" class="form-control" id="field_clientContact" name="field_clientContact" placeholder="Phone" value="<?php echo $theUser->phone;?>">
+                                                                            <input type="text" class="form-control" id="field_phone" name="field_phone" placeholder="Phone" value="<?php echo $theUser->phone;?>">
                                                                     </div>
                                                             </div>	
                                                             <div class="form-group">
                                                                     <label for="field_clientContact" class="col-sm-3 control-label">Company:</label>
                                                                     <div class="col-sm-9">
-                                                                            <input type="text" class="form-control" id="field_clientContact" name="field_clientContact" placeholder="Company" value="<?php echo $theUser->company;?>">
+                                                                            <input type="text" class="form-control" id="field_company" name="field_company" placeholder="Company" value="<?php echo $theUser->company;?>">
                                                                     </div>
                                                             </div>
                                                             <div class="form-group">
                                                                     <label for="field_clientContact" class="col-sm-3 control-label">Email:<span class="text-danger">*</span></label>
                                                                     <div class="col-sm-9">
-                                                                            <input type="text" class="form-control" id="field_clientContact" name="field_clientContact" placeholder="Email" value="<?php echo $theUser->email;?>">
+                                                                            <input type="text" class="form-control" id="field_email" name="field_email" placeholder="Email" value="<?php echo $theUser->email;?>">
                                                                     </div>
                                                             </div>
                                                             <div class="form-group">
                                                                     <label for="field_clientContact" class="col-sm-3 control-label">Web Address:<span class="text-danger">*</span></label>
                                                                     <div class="col-sm-9">
-                                                                            <input type="text" class="form-control" id="field_clientContact" name="field_clientContact" placeholder="Web Address" value="<?php echo $theUser->webaddress;?>">
+                                                                            <input type="text" class="form-control" id="field_web_address" name="field_web_address" placeholder="Web Address" value="<?php echo $theUser->webaddress;?>">
                                                                     </div>
                                                             </div>
                                                             <div class="form-group">
@@ -126,7 +128,7 @@
 							</div><!-- /.dashboard -->
 							
 						</div><!-- /.tab-pane -->
-						
+						<?php if ($this->ion_auth->is_admin()){?>
                                                 <div role="tabpanel" class="tab-pane <?php if($active_tab=="gropus"){?>active<?php }?>" id="clientGroups">
 							
 							<div class="dashboard">
@@ -229,7 +231,7 @@
 							</div><!-- /.dashboard -->
 							
 						</div><!-- /.tab-pane -->
-						
+                                                <?php } ?>
 				  	</div><!-- /.tab-content -->
 					
 					</form>
