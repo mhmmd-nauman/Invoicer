@@ -11,7 +11,7 @@ class Auth extends CI_Controller {
 
 		$this->form_validation->set_error_delimiters($this->config->item('error_start_delimiter', 'ion_auth'), $this->config->item('error_end_delimiter', 'ion_auth'));
                 $this->load->model('user_model');
-
+                $this->load->model('package_model');
 		$this->lang->load('auth');
 	}
 
@@ -787,8 +787,25 @@ class Auth extends CI_Controller {
 
 		$this->_render_page('auth/edit_group', $this->data);
 	}
-
+        function is_allowed_to_add_employee($userID){
+            return true;
+            
+            if($userID){
+                $theUser = $user = $this->ion_auth->user($userID)->row();
+                // employees
+                $package = $this->package_model->getPackageInfo($user->package_id);
+                //print_r($package);
+                if($package['employees_max'] >= count($this->user_model->getEmployee($theUser->id))){
+                   return true;
+                }else{
+                   return false;
+                }
+                
+                //exit;
+            }
+        }
         function get_users($userID,$active_tab=""){
+            
             if($userID){
                 $theUser = $user = $this->ion_auth->user($userID)->row();
                 $this->data['theUser'] = $theUser;

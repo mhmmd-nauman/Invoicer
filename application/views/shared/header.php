@@ -53,19 +53,26 @@
 				<?php echo $this->lang->line('add_client');?>
 			</button>
                     <?php if( $this->ion_auth->in_group(array(2))){?>
+                    <?php 
+                    //echo $this->ion_auth->is_allowed_to_add_employee(1);
+                    //if($this->ion_auth->is_allowed_to_add_employee($this->ion_auth->user()->row()->id) == 1){?>
                     <button class="btn btn-default navbar-btn btn-sm addClientButton" type="button" data-target="#modal_newEmployee" data-toggle="modal"><span class="fui-plus"></span> 
                             Add Employee
                     </button>
-                    <?php } ?>
+                    <?php //}
+                    } ?>
                     
             <ul class="nav navbar-nav navbar-right" style="margin-right: 20px">
             	<li class="dropdown">
                 	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome <?php echo $this->ion_auth->user()->row()->first_name." ".$this->ion_auth->user()->row()->last_name;?> <b class="caret"></b></a>
                 	<ul class="dropdown-menu">
- 					   	<li><a href="#modal_account" data-toggle="modal"><?php echo $this->lang->line('my_account_and_company');?></a></li>
-						<li><a href="#modal_apikeys" data-toggle="modal"><?php echo $this->lang->line('api_keys');?></a></li>
-						<li><a href="<?php echo site_url('settings');?>"><?php echo $this->lang->line('application_settings');?></a></li>
-                  	  	<li><a href="<?php echo site_url('documentation')?>"><?php echo $this->lang->line('help_documentation');?></a></li>
+                                <li><a href="#modal_account" data-toggle="modal"><?php echo $this->lang->line('my_account_and_company');?></a></li>
+                                <li><a href="#modal_apikeys" data-toggle="modal"><?php echo $this->lang->line('api_keys');?></a></li>
+                                <li><a href="<?php echo site_url('settings');?>"><?php echo $this->lang->line('application_settings');?></a></li>
+                                <?php if ($this->ion_auth->is_admin() || $this->ion_auth->in_group(array(2))){?>
+                                    <li><a href="<?php echo site_url('packages');?>">My Package</a></li>
+                                <?php } ?>
+                                <li><a href="<?php echo site_url('documentation')?>"><?php echo $this->lang->line('help_documentation');?></a></li>
                   	  	<li class="divider"></li>
                   	  	<li><a href="<?php echo site_url('logout')?>"><?php echo $this->lang->line('logout');?></a></li>
                 	</ul>
