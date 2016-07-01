@@ -13,7 +13,8 @@ class User extends CI_Controller {
 		$this->load->library(array('ion_auth', 'form_validation'));
 		
 		$this->load->model('company_model');
-		
+		$this->load->model('user_model');
+                $this->load->model('package_model');
 		if( !$this->ion_auth->logged_in() ) {
 			
 			redirect('login');
@@ -30,11 +31,24 @@ class User extends CI_Controller {
 	*/
         public function createEmployee($userID=0){
             
-            if( $this->ion_auth->in_group(array(2)) && !$this->ion_auth->is_admin()){
-                $userID =$this->ion_auth->user()->row()->id;
-            }
+            // need to check the package and then restrict if user can add more employees
             
-                    
+            if( $this->ion_auth->in_group(array(2)) && !$this->ion_auth->is_admin()){
+                $userID = $this->ion_auth->user()->row()->id;
+            }
+            $theUser = $user = $this->ion_auth->user($userID)->row();
+            $package = $this->package_model->getPackageInfo($user->package_id);
+            if($package['employees_max'] <= count($this->user_model->getEmployee($theUser->id))){
+               // over limits in adding employee
+                $alert = array();
+                $alert['alertHeading'] = $this->lang->line('error');
+                $alert['alertContent'] = "Please upgrate your package to add more employees";
+
+                //$alert ="Please upgrate your package to add more employees.";
+                $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+                redirect('users/', 'location');
+            } 
+            
             $this->form_validation->set_rules('first_name', $this->lang->line('create_user_validation_fname_label'), 'required');
             //$this->form_validation->set_rules('last_name', $this->lang->line('create_user_validation_lname_label'), 'required');
             $this->form_validation->set_rules('email', $this->lang->line('create_user_validation_email_label'), 'required|valid_email');

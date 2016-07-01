@@ -163,7 +163,14 @@
 							<?php echo $theInvoice->invoice_bottomnote;?>
 						</div>
 					</td>
-				<tr>
+				</tr>
+                                <?php if($package['whitelabel'] == 0){?>
+                                    <tr>
+                                            <td colspan="2">
+                                                    <div ><img src="<?php echo base_url('img/logo_.png');?>" style="height: 40px; position: relative; top: -4px"></div>
+                                            </td>
+                                    </tr>
+                                <?php }?>
 			</body>
 		</table>
 											

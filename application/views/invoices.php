@@ -617,6 +617,13 @@
 									<div data-bind="invoice_bottomNote"></div>
 								</td>
 							</tr>
+                                                        <?php if($package['whitelabel'] == 0){?>
+                                                        <tr>
+								<td colspan="2">
+									<img src="<?php echo base_url('img/logo_.png');?>" style="height: 40px; position: relative; top: -4px">
+								</td>
+							</tr>
+                                                        <?php }?>
 						</table>
 					
 					</div>
@@ -942,6 +949,7 @@
         invoice_currenySymbol: new MyCtor(document.querySelectorAll('[data-bind="invoice_currenySymbol"]'), '<?php echo $theInvoice->currency_sign;?>'),
         invoice_topNote: new MyCtor(document.querySelectorAll('[data-bind="invoice_topNote"]'), "<?php echo $theInvoice->invoice_topnote;?>"),
         invoice_bottomNote: new MyCtor(document.querySelectorAll('[data-bind="invoice_bottomNote"]'), "<?php echo $theInvoice->invoice_bottomnote;?>"),
+        //invoice_bottomNote_whitelabel:new MyCtor(document.querySelectorAll('[data-bind="invoice_bottomNote"]'), "while_label_logo"),
         invoice_notes: new MyCtor(document.querySelectorAll('[data-bind="invoice_notes"]'), "<?php echo $theInvoice->invoice_notes;?>"),
         invoice_taxType: new MyCtor(document.querySelectorAll('[data-bind="invoice_taxType"]'), "<?php echo $theInvoice->invoice_taxtype;?>"),
         invoice_public: new MyCtor(document.querySelectorAll('[data-bind="invoice_public"]'), "<?php echo $theInvoice->invoice_public;?>"),

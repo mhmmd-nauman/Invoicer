@@ -69,7 +69,7 @@ class Package_model extends CI_Model {
             $package[3]['employees_min'] =  4;
             $package[3]['employees_max'] =  9;
             $package[3]['collect_payment_online'] =  0;
-            $package[3]['whitelabel'] =  0;
+            $package[3]['whitelabel'] =  1;
             switch($packageID){
                 case 1:
                     return $package[1];
@@ -122,5 +122,53 @@ class Package_model extends CI_Model {
 		
 		
 	}
+        
+        public function createsubscription($data, $SubscriptionID) {
+		$data['field_CC'] = substr($data['field_CC'],-4);
+		$cdata = array(
+			'user_id' => $data['user_id'],
+			'subscription_id' => $SubscriptionID,
+                        'first_name'=>$data['field_firstName'],
+                        'last_name'=>$data['field_lastName'],
+                        'cc'=>"XXXXXXXXXXXX".$data['field_CC'],
+                        'expiry'=>$data['field_expYearMonth'],
+                        'creation_date'=> date("Y-m-d h:i:s"),
+                        'amount'=>$data['amount'],
+                        'package_id'=>$data['package'],
+			'status' => 1,
+			);
+		
+		$this->db->insert('subscriptions', $cdata);
+				
+		return $this->db->insert_id();
+		
+	}
+        public function updatesubscription($ID, $data) {
+		
+		$cdata = array(
+			//'name' => $data['field_name'],
+			//'description' => $data['field_description'],
+			'status' => $data['field_status'],
+			);
+
+		$this->db->where('id', $ID);
+		$this->db->update('subscriptions', $cdata);
+		
+	}
+        public function getsubscription($user_id) {
+		
+		$this->db->select('*');
+		$this->db->from('subscriptions');
+		$this->db->where('user_id', $user_id);
+                $this->db->where('status', 1);
+		$q = $this->db->get();
+		if( $q->num_rows() > 0 ) {
+                    $result = $q->result();
+                    return $result[0];
+		} else {
+                    return false;	
+		}
+		
+        }
     
 }

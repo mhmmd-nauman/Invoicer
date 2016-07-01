@@ -4,7 +4,7 @@
 		
 		<div class="buttonWrapper">
 			<div class="input-group">
-				<input type="text" id="field_filterClients" placeholder="Filter clients" class="form-control">
+				<input type="text" id="field_filterClients" placeholder="Filter Employees" class="form-control">
 				<span class="input-group-btn">
 					<button class="btn" type="submit"><span class="fui-search"></span></button>
 				</span>

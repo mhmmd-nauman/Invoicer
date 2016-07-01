@@ -89,7 +89,7 @@
 	    	<li <?php if( isset($page) && $page == 'clients' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('clients');?>" class="fui-user" title="<?php echo $this->lang->line('clients');?>"></a></li>
 	    	<li <?php if( isset($page) && $page == 'reports' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('reports');?>" class="fa fa-calculator" title="<?php echo $this->lang->line('reports');?>"></a></li>
 		<?php if ($this->ion_auth->is_admin() || $this->ion_auth->in_group(array(2))){?>
-                    <li <?php if( isset($page) && $page == 'users' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('users');?>" class="fui-user" title="Users"></a></li>
+                    <li <?php if( isset($page) && $page == 'users' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('users');?>" class="fui-user" title="Employees"></a></li>
                 <?php }?>
                 <li <?php if( isset($page) && $page == 'documentation' ):?>class="active"<?php endif;?>><a href="<?php echo site_url('documentation');?>" class="fa fa-life-ring" title="<?php echo $this->lang->line('documentation')?>"></a></li>
 		<li class="power"><a href="<?php echo site_url('logout');?>" class="fui-power" title="<?php echo $this->lang->line('logout');?>"></a></li>

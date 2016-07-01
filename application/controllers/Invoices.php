@@ -9,7 +9,7 @@ class Invoices extends CI_Controller {
 
 		$this->load->database();
 		$this->load->helper(array('url', 'dompdf_helper', 'string'));
-		$this->load->model(array('currency_model', 'client_model', 'invoice_model', 'payment_model', 'settings_model', 'api_model'));
+		$this->load->model(array('currency_model', 'client_model', 'invoice_model', 'payment_model', 'settings_model', 'api_model','package_model'));
 		$this->load->library(array('ion_auth', 'form_validation'));
 
 		if( $this->ion_auth->logged_in() ) {
@@ -73,7 +73,11 @@ class Invoices extends CI_Controller {
 		$this->data['page'] = 'invoices';
 		$this->data['theInvoice'] = $theInvoice;
 		$this->data['payments'] = $this->payment_model->getForInvoice($invoiceID, $this->data['user']->id);
-
+                // pass the package info
+                $user = $this->ion_auth->user()->row();
+                $package = $this->package_model->getPackageInfo($user->package_id);
+                $this->data['package'] = $package;
+                //
 		$this->load->view('invoices', $this->data);
 
 	}
@@ -135,7 +139,9 @@ class Invoices extends CI_Controller {
 		}
 
 		$this->data['theInvoice'] = $theInvoice;
-
+                $user = $this->ion_auth->user()->row();
+                $package = $this->package_model->getPackageInfo($user->package_id);
+                $this->data['package'] = $package;
 
 		$this->load->helper(array('dompdf', 'file'));
 
