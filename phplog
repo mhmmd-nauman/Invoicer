@@ -2751,3 +2751,120 @@
  Fri, 01 Jul 2016 05:24:49 -0700 INFO : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 96) - Response from AnetApi: ﻿<?xml version="1.0" encoding="utf-8"?><ARBCreateSubscriptionResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd"><refId>ref1467375885</refId><messages><resultCode>Error</resultCode><message><code>E00012</code><text>You have submitted a duplicate of Subscription 4074290. A duplicate subscription will not be created.</text></message></messages></ARBCreateSubscriptionResponse>
  Fri, 01 Jul 2016 05:24:49 -0700 INFO : [execute] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\api\controller\base\ApiOperationBase.php : 125) - Response De-Serialization Begin
  Fri, 01 Jul 2016 05:24:49 -0700 INFO : [execute] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\api\controller\base\ApiOperationBase.php : 127) - Response De-Serialization End
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [execute] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\api\controller\base\ApiOperationBase.php : 112) - Request Serialization Begin
+ Mon, 04 Jul 2016 00:23:25 -0700 DEBUG : [execute] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\api\controller\base\ApiOperationBase.php : 113) - net\authorize\api\contract\v1\ARBCreateSubscriptionRequest Object
+(
+    [subscription:net\authorize\api\contract\v1\ARBCreateSubscriptionRequest:private] => net\authorize\api\contract\v1\ARBSubscriptionType Object
+        (
+            [name:net\authorize\api\contract\v1\ARBSubscriptionType:private] => User ddddPackage Subscription
+            [paymentSchedule:net\authorize\api\contract\v1\ARBSubscriptionType:private] => net\authorize\api\contract\v1\PaymentScheduleType Object
+                (
+                    [interval:net\authorize\api\contract\v1\PaymentScheduleType:private] => net\authorize\api\contract\v1\PaymentScheduleType\IntervalAType Object
+                        (
+                            [length:net\authorize\api\contract\v1\PaymentScheduleType\IntervalAType:private] => 30
+                            [unit:net\authorize\api\contract\v1\PaymentScheduleType\IntervalAType:private] => days
+                        )
+
+                    [startDate:net\authorize\api\contract\v1\PaymentScheduleType:private] => DateTime Object
+                        (
+                            [date] => 2016-07-04 00:00:00
+                            [timezone_type] => 3
+                            [timezone] => America/Los_Angeles
+                        )
+
+                    [totalOccurrences:net\authorize\api\contract\v1\PaymentScheduleType:private] => 9999
+                    [trialOccurrences:net\authorize\api\contract\v1\PaymentScheduleType:private] => 1
+                )
+
+            [amount:net\authorize\api\contract\v1\ARBSubscriptionType:private] => 12.00
+            [trialAmount:net\authorize\api\contract\v1\ARBSubscriptionType:private] => 0.00
+            [payment:net\authorize\api\contract\v1\ARBSubscriptionType:private] => net\authorize\api\contract\v1\PaymentType Object
+                (
+                    [creditCard:net\authorize\api\contract\v1\PaymentType:private] => net\authorize\api\contract\v1\CreditCardType Object
+                        (
+                            [cardCode:net\authorize\api\contract\v1\CreditCardType:private] => 
+                            [isPaymentToken:net\authorize\api\contract\v1\CreditCardType:private] => 
+                            [cryptogram:net\authorize\api\contract\v1\CreditCardType:private] => 
+                            [cardNumber:net\authorize\api\contract\v1\CreditCardSimpleType:private] => xxxx-1111
+                            [expirationDate:net\authorize\api\contract\v1\CreditCardSimpleType:private] => xxxx
+                        )
+
+                    [bankAccount:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [trackData:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [encryptedTrackData:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [payPal:net\authorize\api\contract\v1\PaymentType:private] => 
+                    [opaqueData:net\authorize\api\contract\v1\PaymentType:private] => 
+                )
+
+            [order:net\authorize\api\contract\v1\ARBSubscriptionType:private] => 
+            [customer:net\authorize\api\contract\v1\ARBSubscriptionType:private] => 
+            [billTo:net\authorize\api\contract\v1\ARBSubscriptionType:private] => net\authorize\api\contract\v1\NameAndAddressType Object
+                (
+                    [firstName:net\authorize\api\contract\v1\NameAndAddressType:private] => User
+                    [lastName:net\authorize\api\contract\v1\NameAndAddressType:private] => dddd
+                    [company:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                    [address:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                    [city:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                    [state:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                    [zip:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                    [country:net\authorize\api\contract\v1\NameAndAddressType:private] => 
+                )
+
+            [shipTo:net\authorize\api\contract\v1\ARBSubscriptionType:private] => 
+            [profile:net\authorize\api\contract\v1\ARBSubscriptionType:private] => 
+        )
+
+    [merchantAuthentication:net\authorize\api\contract\v1\ANetApiRequestType:private] => net\authorize\api\contract\v1\MerchantAuthenticationType Object
+        (
+            [name:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 45Gr3m4Nqa
+            [transactionKey:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => xxxx
+            [sessionToken:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [password:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [impersonationAuthentication:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [fingerPrint:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+            [mobileDeviceId:net\authorize\api\contract\v1\MerchantAuthenticationType:private] => 
+        )
+
+    [refId:net\authorize\api\contract\v1\ANetApiRequestType:private] => ref1467617005
+)
+
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [execute] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\api\controller\base\ApiOperationBase.php : 115) - Request  Serialization End
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 75) -  Url: https://apitest.authorize.net/xml/v1/request.api
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 77) - Request to AnetApi: 
+<?xml version="1.0" encoding="UTF-8"?>
+<ARBCreateSubscriptionRequest xmlns="AnetApi/xml/v1/schema/AnetApiSchema.xsd">
+  <merchantAuthentication>
+    <name><![CDATA[45Gr3m4Nqa]]></name>
+    <transactionKey>xxxx</transactionKey>
+  </merchantAuthentication>
+  <refId><![CDATA[ref1467617005]]></refId>
+  <subscription>
+    <name><![CDATA[User ddddPackage Subscription]]></name>
+    <paymentSchedule>
+      <interval>
+        <length>30</length>
+        <unit><![CDATA[days]]></unit>
+      </interval>
+      <startDate><![CDATA[2016-07-04]]></startDate>
+      <totalOccurrences>9999</totalOccurrences>
+      <trialOccurrences>1</trialOccurrences>
+    </paymentSchedule>
+    <amount>12.00</amount>
+    <trialAmount>0.00</trialAmount>
+    <payment>
+      <creditCard>
+        <cardNumber>xxxx-1111</cardNumber>
+        <expirationDate>xxxx</expirationDate>
+      </creditCard>
+    </payment>
+    <billTo>
+      <firstName><![CDATA[User]]></firstName>
+      <lastName><![CDATA[dddd]]></lastName>
+    </billTo>
+  </subscription>
+</ARBCreateSubscriptionRequest>
+
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 89) - Sending 'XML' Request type
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 94) - Sending http request via Curl
+ Mon, 04 Jul 2016 00:23:25 -0700 INFO : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 96) - Response from AnetApi: 
+ Mon, 04 Jul 2016 00:23:25 -0700 ERROR : [_sendRequest] (F:\xampp-installation\htdocs\invoiced\application\third_party\vendor\authorizenet\authorizenet\lib\net\authorize\util\HttpClient.php : 106) - CURL ERROR: Could not resolve host: apitest.authorize.net

@@ -47,6 +47,8 @@ class Packages extends CI_Controller {
                     $_POST = $this->session->userdata('posted_data');
                     $data = array(
 				'package_id' => $_POST['package'],
+                                'trial_account' => 0,
+                                'active' => 1,
 				);
                     $user = $this->ion_auth->user()->row();
                     

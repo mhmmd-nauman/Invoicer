@@ -79,7 +79,36 @@
                                                 <div role="tabpanel" class="tab-pane <?php if($active_tab==""){?>active<?php }?>" id="clientOverview">
 							
 							<div class="dashboard">
-								
+                                                            <?php if ($this->ion_auth->is_admin()){?>
+                                                            <div class="form-group">
+                                                                <label for="field_clientName" class="col-sm-3 control-label">Trial Account:<span class="text-danger">*</span></label>
+                                                                <div class="col-sm-9">
+                                                                       <select class="form-control select select-default select-block mbl custom" name="field_trial_account" id="field_trial_account" >
+                                                                            <option value="0" <?php if( $theUser->trial_account == 0 ):?>selected<?php endif;?>>No</option>
+                                                                            <option value="1" <?php if( $theUser->trial_account == 1 ):?>selected<?php endif;?>>Yes</option>    
+                                                                        </select>
+                                                                        <div class="help-block with-errors"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="field_clientName" class="col-sm-3 control-label">Trial Start Date:<span class="text-danger">*</span></label>
+                                                                <div class="col-sm-9">
+                                                                       <div class="input-group">
+                                                                            <span class="input-group-btn">
+                                                                              <button class="btn" type="button"><span class="fui-calendar"></span></button>
+                                                                            </span>
+                                                                           <?php 
+                                                                           $trialdate = "";
+                                                                           if($theUser->trial_date != Null){
+                                                                                $trialdate=$theUser->trial_date;
+                                                                                $trialdate = date("Y-m-d",strtotime($trialdate));
+                                                                            }?>
+                                                                            <input type="date" class="form-control" name="field_trial_date" id="field_trial_date" value="<?php echo $trialdate;?>"   data-error="">
+                                                                        </div>
+                                                                        <div class="help-block with-errors"></div>
+                                                                </div>
+                                                            </div>
+                                                            <?php }?>
                                                             <div class="form-group">
                                                                 <label for="field_clientName" class="col-sm-3 control-label">First Name:<span class="text-danger">*</span></label>
                                                                 <div class="col-sm-9">
@@ -118,6 +147,18 @@
                                                                             <input type="text" class="form-control" id="field_web_address" name="field_web_address" placeholder="Web Address" value="<?php echo $theUser->webaddress;?>">
                                                                     </div>
                                                             </div>
+                                                            <?php if ($this->ion_auth->is_admin()){?>
+                                                            <div class="form-group">
+                                                                <label for="field_clientName" class="col-sm-3 control-label">Status:<span class="text-danger">*</span></label>
+                                                                <div class="col-sm-9">
+                                                                       <select class="form-control select select-default select-block mbl custom" name="field_active" id="field_active" >
+                                                                            <option value="0" <?php if( $theUser->active == 0 ):?>selected<?php endif;?>>Blocked</option>
+                                                                            <option value="1" <?php if( $theUser->active == 1 ):?>selected<?php endif;?>>Active</option>    
+                                                                        </select>
+                                                                        <div class="help-block with-errors"></div>
+                                                                </div>
+                                                            </div>
+                                                            <?php } ?>
                                                             <div class="form-group">
 								<div class="col-sm-9 col-sm-offset-3 clientDetailsButtons">
 									<button type="submit" class="btn btn-primary btn-embossed btn-wide"><span class="fui-check"></span> <?php echo $this->lang->line('update_details');?></button>

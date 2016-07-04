@@ -67,20 +67,44 @@ class Auth extends CI_Controller {
 
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
-				//if the login is successful
-				//redirect them back to the home page
-				$this->session->set_flashdata('message', $this->ion_auth->messages());
-                                //$this->config->set_item('base_url','http://test.getinvoicer.com/') ;
-                                $user = $this->ion_auth->user()->row();
-                                $webaddress = $user->webaddress;
-                                if(empty($webaddress) || $this->config->base_url()=="http://localhost/invoiced/"){
-                                   redirect('/', 'refresh'); 
+                            $user = $this->ion_auth->user()->row();
+                            //look for trial account
+                            if($user->trial_account == 1){
+                                // now look for expired period
+                                $start_date = $user->trial_date;
+                                $d1 = new DateTime(date("Y-m-d"));
+                                $d2 = new DateTime(date("Y-m-d",strtotime($start_date)));
+
+                                 $diff = $d2->diff($d1);
+                                 $effective_days = $diff->d ;
+                                if($effective_days > 15 ){
+                                    // trial expired
+                                    $alert = array();
+                                    $alert['alertHeading'] = $this->lang->line('error');
+                                    $alert['alertContent'] = "Your Trial account expired. Please upgrade your package to continue";
+
+                                    $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+                                    $this->session->set_userdata(array(
+                                        'trial_expired' => true
+                                        
+                                    ));
+                                    redirect("/packages","refresh");
                                 }
-                                ?>
-                                <script type="text/javascript">
-                                window.location.href="http://<?php echo $webaddress;?>";
-                                </script>
-                                <?php
+                            }
+                            //if the login is successful
+                            //redirect them back to the home page
+                            $this->session->set_flashdata('message', $this->ion_auth->messages());
+                            //$this->config->set_item('base_url','http://test.getinvoicer.com/') ;
+
+                            $webaddress = $user->webaddress;
+                            if(empty($webaddress) || $this->config->base_url()=="http://localhost/invoiced/"){
+                               redirect('/', 'refresh'); 
+                            }
+                            ?>
+                            <script type="text/javascript">
+                            window.location.href="http://<?php echo $webaddress;?>";
+                            </script>
+                            <?php
 				
 			}
 			else

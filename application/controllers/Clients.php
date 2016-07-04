@@ -19,6 +19,15 @@ class Clients extends CI_Controller {
 			redirect('login');
 			
 		}
+                if ($this->session->userdata('trial_expired') == 'true') {
+                    $alert = array();
+                    $alert['alertHeading'] = $this->lang->line('error');
+                    $alert['alertContent'] = "Please upgrade your package to continue";
+
+                    $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+
+                    redirect("/packages","refresh");
+                }
 		
 		$this->data['user'] = $this->ion_auth->user()->row();
 		$this->user = $this->ion_auth->user()->row();

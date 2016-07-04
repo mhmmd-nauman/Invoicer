@@ -25,7 +25,16 @@ class Invoices extends CI_Controller {
 		} else {
 
 		}
+                
+                if ($this->session->userdata('trial_expired') == 'true') {
+                    $alert = array();
+                    $alert['alertHeading'] = $this->lang->line('error');
+                    $alert['alertContent'] = "Please upgrade your package to continue";
 
+                    $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+
+                    redirect("/packages","refresh");
+                }
 
 		$this->data['currencies'] = $this->currency_model->getAll();
 		$this->data['allCurrencies'] = $this->data['currencies'];

@@ -20,9 +20,20 @@ class User extends CI_Controller {
 			redirect('login');
 			
 		}
+                if ($this->session->userdata('trial_expired') == 'true') {
+                    $alert = array();
+                    $alert['alertHeading'] = $this->lang->line('error');
+                    $alert['alertContent'] = "Please upgrade your package to continue";
+
+                    $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+
+                    redirect("/packages","refresh");
+                }
 		
 		$this->data['user'] = $this->ion_auth->user()->row();
 		$this->user = $this->ion_auth->user()->row();
+                
+                
 		
 	}
 	
@@ -147,16 +158,31 @@ class User extends CI_Controller {
 		} else {//validation successfull
 			
 			//update details
-			
+			if ($this->ion_auth->is_admin()){
 			$data = array(
 				'email' => $_POST['field_email'],
 				'first_name' => $_POST['field_first_name'],
                                 'last_name' => $_POST['field_last_name'],
                                 'phone' => $_POST['field_phone'],
                                 'company' => $_POST['field_company'],
-                                'webaddress' => $_POST['field_web_address']
+                                'webaddress' => $_POST['field_web_address'],
+                                'trial_account' => $_POST['field_trial_account'],
+                                'trial_date' => date("Y-m-d",strtotime($_POST['field_trial_date'])),
+                                'active' => $_POST['field_active']
 			);
-			
+                        }else{
+                            $data = array(
+				'email' => $_POST['field_email'],
+				'first_name' => $_POST['field_first_name'],
+                                'last_name' => $_POST['field_last_name'],
+                                'phone' => $_POST['field_phone'],
+                                'company' => $_POST['field_company'],
+                                'webaddress' => $_POST['field_web_address'],
+                                //'trial_account' => $_POST['field_trial_account'],
+                                //'trial_date' => date("Y-m-d",strtotime($_POST['field_trial_date'])),
+                                //'active' => $_POST['field_active']
+			);
+                        }
 			$change = $this->ion_auth->update($userID, $data);
 			
 			if( $change ) {
