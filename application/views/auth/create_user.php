@@ -58,57 +58,47 @@
 							
                                                         <form class="form-horizontal" method="post" action="<?php echo site_url('register')?>">
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="firstname">First Name:</label>
-                                                                <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
+                                                                
+                                                                <div class="col-md-12">
+                                                                    <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="lastname">Last Name:</label>
-                                                                <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="phone">Phone:</label>
-                                                                <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
+                                                               <div class="col-md-12">
+                                                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="Phone">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="company">Company:</label>
-                                                                <div class="col-md-8">
-                                                                <input type="text" class="form-control" id="company" name="company" placeholder="Company" onchange="getWebaddress();">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" class="form-control" id="company" name="company" placeholder="Company" onchange="getWebaddress();">
                                                                 </div>
                                                             </div>
                                                             
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="email">Email:</label>
-                                                                <div class="col-md-8">
-                                                                <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $this->lang->line('email_placeholder');?>">
+                                                                <div class="col-md-12">
+                                                                    <input type="email" class="form-control" id="email" name="email" placeholder="<?php echo $this->lang->line('email_placeholder');?>">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="password">Password:</label>
-                                                                 <div class="col-md-8">
-                                                                <input type="password" class="form-control" id="password" name="password" placeholder="<?php echo $this->lang->line('password_placeholder');?>">
-                                                                 </div>
+                                                                <div class="col-md-12">
+                                                                    <input type="password" class="form-control" id="password" name="password" placeholder="<?php echo $this->lang->line('password_placeholder');?>">
+                                                                </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="confirmpassword">Confirm Password:</label>
-                                                                <div class="col-md-8">
+                                                                <div class="col-md-12">
                                                                     <input type="password" class="form-control" id="password_confirm" name="password_confirm" placeholder="Confirm Password">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label class="control-label col-md-2" for="webaddress">Web Address:</label>
-                                                                <div class="col-md-5">
-                                                                <input type="text" class="form-control" id="webaddress" name="webaddress" placeholder="Web Address">
+                                                                <div class="col-md-12">
+                                                                    <input type="text" class="form-control" id="webaddress" name="webaddress" placeholder="Your Login URL">
                                                                 </div>
-                                                                <div class="col-md-3">
-                                                                .getinvoicer.com
-                                                                </div>
-                                                                </div>
+                                                            </div>
                                                              <div class="form-group">
                                                                  <div class="col-md-3">
                                                                      &nbsp;

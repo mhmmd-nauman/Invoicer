@@ -298,5 +298,21 @@ class User extends CI_Controller {
 		}
 				
 	}
+        public function testemail(){
+           
+            $this->load->library('email');
+            //$this->CI->email->initialize($config);
+            $this->email->from('mhmmd.nauman@gmail.com', 'Post Title');
+            $this->email->to('mhmmd.nauman@gmail.com');
+            $this->email->subject("Test Email");
+            $this->email->message("My Message");
+             
+
+            if($this->email->send()):
+                    echo "sent";
+            else:
+                    echo $this->email->print_debugger();
+            endif;
+        }
 	
 }

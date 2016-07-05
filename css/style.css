@@ -59,7 +59,7 @@ hr.dashed {
 }
 
 .mainNav {
-	background: #283848;
+	background: #57c7f3;
 	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
 }
 
@@ -102,7 +102,7 @@ ul.list_clients {
 	top: 76px;
 	left: 0px;
 	height: 100%;
-	background: #34495E;
+	background: #449fc2;
 	border-radius: 0px;
 	z-index: 100;
 }
@@ -167,7 +167,7 @@ ul.list_clients {
 	width: 325px;
 	z-index: 100;
 	border-right: 2px solid #C5CBCE;
-	background: #edeff0;
+	background: #57c7f3;
 	overflow-y: scroll;
 }
 
@@ -726,3 +726,4 @@ table.totalsTable tr:first-child td {
 }
 
 /* end select dropdown */
+.dropdown-menu ul{ background: #57c7f3;}

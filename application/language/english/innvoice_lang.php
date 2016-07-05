@@ -36,7 +36,7 @@ $lang['success'] = "Success";
 
 
 /* /views/shared/header.php */
-$lang['html_title'] = "Innvoice";
+$lang['html_title'] = "Invoicer";
 $lang['toggle_navigation'] = "Toggle navigation";
 $lang['create_new_invoice_for'] = "Create New Invoice For... ";
 $lang['add_client'] = "Add Client";
@@ -65,7 +65,7 @@ $lang['client_overview'] = "Client Overview";
 
 $lang['welcome_heading'] = "Well, hello there!";
 $lang['welcome_message'] = '<p>
-					It appears you have only just started using Innvoice; wonderful! The first thing I would do, is <a href="#modal_newClient" data-toggle="modal">adding one or more clients</a>. Once you have one or more clients, you can then start creating and sending out invoices.
+					It appears you have only just started using Invoicer; wonderful! The first thing I would do, is <a href="#modal_newClient" data-toggle="modal">adding one or more clients</a>. Once you have one or more clients, you can then start creating and sending out invoices.
 				</p>
 				<p>
 					If you need some guidance at any point, just click the Documentation icon in the left menu.
@@ -352,10 +352,10 @@ $lang['build_report'] = "Build Report";
 
 
 /* /views/auth/login.php */
-$lang['login_html_title'] = "Innvoice login";
+$lang['login_html_title'] = "Invoicer login";
 $lang['tab_login'] = "Login";
 $lang['tab_forgot_password'] = "Forgot Password";
-$lang['log_into_innvoice'] = "Log into Innvoicer";
+$lang['log_into_innvoice'] = "Log into Invoicer";
 $lang['email_placeholder'] = "Your email address";
 $lang['password_placeholder'] = "Your password";
 $lang['remind_me_label'] = "Remind me";

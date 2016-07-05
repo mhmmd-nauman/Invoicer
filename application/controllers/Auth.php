@@ -488,6 +488,8 @@ class Auth extends CI_Controller {
 				'company'    => $this->input->post('company'),
 				'phone'      => $this->input->post('phone'),
                                 'webaddress'      => $this->input->post('webaddress'),
+                                'trial_account' => 1,
+                                'trial_date' => date('Y-m-d'),
 			);
 		}
 		if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data))

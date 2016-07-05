@@ -8,7 +8,7 @@
 						
 			<div class="col-md-12">
 				
-				<iframe src="http://docs.selfhosted.net/innvoice/index.html" style="border: 0px; background: #FAF6F0; width: 100%" id="docFrame"></iframe>
+				<iframe src="http://getinvoicer.com/docs/index.html" style="border: 0px; background: #FAF6F0; width: 100%" id="docFrame"></iframe>
 			
 			</div><!-- /.col -->
 			
