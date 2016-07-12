@@ -1,7 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 $config['useragent'] = 'Invoicer';
-$config['protocol'] = 'smtp';
+$config['protocol'] = 'mail';
+//$config['protocol'] = 'smtp';
 $config['mailpath'] = '/usr/sbin/sendmail';
 $config['smtp_host'] = 'ssl://email-smtp.us-east-1.amazonaws.com';
 $config['smtp_user'] = 'AKIAJW2CRQANSO3SXKAA';
@@ -10,7 +11,7 @@ $config['smtp_port'] = 465;
 $config['smtp_timeout'] = 5;
 $config['smtp_keepalive'] = FALSE;
 $config['smtp_crypto'] = '';
-$config['wordwrap'] = TRUE;
+$config['wordwrap'] = false;
 $config['wrapchars'] = 76;
 $config['mailtype'] = 'html';
 $config['validate'] = FALSE;

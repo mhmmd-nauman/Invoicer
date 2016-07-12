@@ -106,74 +106,28 @@ class User_model extends CI_Model {
 		
 	}
 	
-	
-	public function delete( $clientID ) {
+        public function deleteEmployee( $emp_ID ) {
+            $this->db->where('id', $emp_ID);
+            $this->db->delete('users');
+        }
+	public function delete( $user_id ) {
 		
-		//start by removing all payments connected this clients invoices
-		
-		$q = $this->db->from('invoices')->where('client_id', $clientID)->get();
+		$q = $this->db->from('users')->where('owner', $user_id)->get();
 		
 		if( $q->num_rows() > 0 ) {
 			
-			foreach( $q->result() as $invoice ) {
+			foreach( $q->result() as $users ) {
 				
-				$invoiceID = $invoice->invoice_id;
+				$child_id = $users->id;
 				
-				//delete all connected payments
-				
-				$this->db->where('invoice_id', $invoiceID);
-				$this->db->delete('payments');
-				
-				
-				//deal with reports
-				
-				$z = $this->db->from('reports_invoices')->join('reports', 'reports.report_id = reports_invoices.report_id')->where('reports_invoices.invoice_id', $invoiceID)->get();
-				
-				if( $z->num_rows() > 0 ) {
-					
-					foreach( $z->result() as $report ) {
-						
-						$reportID = $report->report_id;
-						
-						$this->db->where('report_id', $reportID);
-						$this->db->delete('reports');
-						
-					}
-					
-				}				
+				$this->db->where('id', $child_id);
+				$this->db->delete('users');
 				
 			}
 			
 		}
-		
-		
-		/* delete invoices */
-		$this->db->where('client_id', $clientID);
-		$this->db->delete('invoices');
-		
-		
-		
-		/* delete reports */
-		
-		$z = $this->db->from('reports_clients')->join('reports', 'reports.report_id = reports_clients.report_id')->where('reports_clients.client_id', $clientID)->get();
-		
-		if( $z->num_rows() > 0 ) {
-			
-			foreach( $z->result() as $report ) {
-				
-				$reportID = $report->report_id;
-				
-				$this->db->where('report_id', $reportID);
-				$this->db->delete('reports');
-				
-			}
-			
-		}
-		
-		
-		//delete the client
-		$this->db->where('client_id', $clientID);
-		$this->db->delete('clients');
+		$this->db->where('id', $user_id);
+		$this->db->delete('users');
 		
 	}
     

@@ -32,7 +32,7 @@
 			
 				<div class="col-md-12 clearfix" style="margin-bottom: 20px">
 					
-					<?php if( $currencies && count($currencies) > 1 ):?>
+					<?php if( $currencies && count($currencies) >= 1 ):?>
 					<div class="pull-right">
 						<?php echo $this->lang->line('show_amounts_in');?>: 
 						<div class="btn-group">

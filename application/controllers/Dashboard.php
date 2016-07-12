@@ -10,7 +10,7 @@ class Dashboard extends CI_Controller {
 		$this->load->database();
 		$this->load->helper(array('url', 'form'));
 		$this->load->library('ion_auth');
-		$this->load->model(array('client_model', 'currency_model', 'invoice_model', 'settings_model', 'api_model'));
+		$this->load->model(array('client_model', 'currency_model', 'invoice_model', 'settings_model', 'api_model','company_model'));
 		
 		if( !$this->ion_auth->logged_in() ) {
 			
@@ -26,9 +26,12 @@ class Dashboard extends CI_Controller {
 		$this->data['settings'] = $this->settings_model->getAll( $this->data['user']->id );
 		
 		$this->data['allCurrencies'] = $this->currency_model->getAll();
+		$defaullt_currency_temp =$this->company_model->get($this->user->company_id);
+                
+                //;
+		$this->data['default_currency'] = $this->currency_model->get($defaullt_currency_temp->default_currency);
 		
-		$this->data['default_currency'] = $this->currency_model->get($this->config->item('default_currency'));
-		$this->data['total_paid'] = number_format($this->invoice_model->getTotalPaid( $this->data['default_currency']->currency_shortname, strtotime('1 Jan '.date('Y')), strtotime('31 Dec '.date('Y')), $this->data['user']->id), 2);
+                $this->data['total_paid'] = number_format($this->invoice_model->getTotalPaid( $this->data['default_currency']->currency_shortname, strtotime('1 Jan '.date('Y')), strtotime('31 Dec '.date('Y')), $this->data['user']->id), 2);
 		$this->data['total_due'] = number_format($this->invoice_model->getTotalDue( $this->data['default_currency']->currency_shortname, strtotime('1 Jan '.date('Y')), strtotime('31 Dec '.date('Y')), $this->data['user']->id), 2);
 		$this->data['total_pastdue'] = number_format($this->invoice_model->getTotalPastDue( $this->data['default_currency']->currency_shortname, strtotime('1 Jan '.date('Y')), strtotime('31 Dec '.date('Y')), $this->data['user']->id), 2);
 		

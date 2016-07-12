@@ -50,17 +50,31 @@ class Settings_model extends CI_Model {
 			$api = 0;
 		}
 		
-		$data = array(
+		
+		$q = $this->db->from('config')->where('user_id', $user->id)->get();
+                if( $q->num_rows() > 0 ) {
+                    $data = array(
 			'invoice_nr_counter' => $data['setting_invoicecounter'],
 			'paypal_email' => $data['field_paypalemail'],
 			'stripe_secret' => $data['field_stripesecret'],
 			'stripe_public' => $data['field_stripepublic'],
 			'api' => $api,
-            'currency_placement' => $data['setting_currencyPlacement']
-		);
-		
-		$this->db->where('user_id', $user->id);
-		$this->db->update('config', $data);
+                        'currency_placement' => $data['setting_currencyPlacement']
+                    );
+                    $this->db->where('user_id', $user->id);
+                    $this->db->update('config', $data);
+                }else{
+                    $data = array(
+			'invoice_nr_counter' => $data['setting_invoicecounter'],
+			'paypal_email' => $data['field_paypalemail'],
+			'stripe_secret' => $data['field_stripesecret'],
+			'stripe_public' => $data['field_stripepublic'],
+			'user_id' => $user->id,
+                        'api' => $api,
+                        'currency_placement' => $data['setting_currencyPlacement']
+                    );
+                    $this->db->insert('config', $data);
+                }
 		
 	}
 	

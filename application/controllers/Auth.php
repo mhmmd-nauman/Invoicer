@@ -594,6 +594,7 @@ class Auth extends CI_Controller {
 					'last_name'  => $this->input->post('last_name'),
 					'company'    => $this->input->post('company'),
 					'phone'      => $this->input->post('phone'),
+                                        'default_currency'      => $this->input->post('field_defaultCurrency'),
 				);
 
 				//update the password if it was posted

@@ -871,7 +871,9 @@
 	<script>
         
     $(function(){
-		
+		$('#filterPanel').slideDown(function(){
+                        $('#button_toggleFilterPanel').text( $('#button_toggleFilterPanel').attr('data-textalt') );
+                });
 		$('#content').redactor({
 			buttons: ['html', 'formatting', 'bold', 'italic', 'link', 'alignment', 'horizontalrule']
 		});

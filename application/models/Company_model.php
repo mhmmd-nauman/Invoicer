@@ -7,15 +7,34 @@ class Company_model extends CI_Model {
         parent::__construct();
                 
     }
-    
-    
+    public function get($companyID) {
+		
+            $q = $this->db->from('companies')->where('company_id', $companyID)->get();
+
+            if( $q->num_rows() > 0 ) {
+
+                    $res = $q->result();
+
+                    return $res[0];
+
+            } else {
+
+                    return false;
+
+            }
+
+    }
+    public function create($data){
+        $this->db->insert('companies', $data);
+	return $this->db->insert_id();
+    }
     public function saveDetails($companyID, $userID, $data) {
     	
 		//update the first_name and last_name first
 		
 		$udata = array(
 		 	'first_name' => $data['field_firstName'],
-		    'last_name' => $data['field_lastName']
+                        'last_name' => $data['field_lastName']
 		);
 
 		$this->db->where('id', $userID);
@@ -29,7 +48,8 @@ class Company_model extends CI_Model {
 			'company_phone' => $data['field_companyPhone'],
 			'company_fax' => $data['field_companyFax'],
 			'company_address' => $data['field_companyAddress'],
-			'company_additionalinfo' => $data['field_companyInfo']
+			'company_additionalinfo' => $data['field_companyInfo'],
+                        'default_currency' => $data['field_defaultCurrency']
  		);
 		
 		$this->db->where('company_id', $companyID);

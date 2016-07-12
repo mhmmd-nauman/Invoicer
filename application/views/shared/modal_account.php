@@ -104,6 +104,17 @@
 							    	</div>
 							  	</div>
 								
+                                                                <div class="form-group">
+                                                                        <label for="field_defaultCurrency" class="col-sm-3 control-label"><?php echo $this->lang->line('client_default_currency_label');?>:</label>
+                                                                        <div class="col-sm-9">
+                                                                                <select id="field_defaultCurrency" name="field_defaultCurrency" class="form-control regular chosen">
+                                                                                    <?php foreach( $allCurrencies as $currency ):?>
+                                                                                        <option value="<?php echo $currency->currency_shortname;?>" <?php if( $currency->currency_shortname == $user->default_currency ):?>selected<?php endif;?> ><?php echo $currency->currency_shortname;?> <?php echo $currency->currency_sign;?></option>
+                                                                                        <?php endforeach;?>
+                                                                                </select>
+                                                                        </div>
+                                                                </div>
+                                                                
 								<div class="form-group">
 							    	<label for="field_companyInfo" class="col-sm-3 control-label"><?php echo $this->lang->line('additional_info_label');?>:</label>
 							    	<div class="col-sm-9">

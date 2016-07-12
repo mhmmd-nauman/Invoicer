@@ -12,9 +12,8 @@ class User extends CI_Controller {
 		
 		$this->load->library(array('ion_auth', 'form_validation'));
 		
-		$this->load->model('company_model');
-		$this->load->model('user_model');
-                $this->load->model('package_model');
+                $this->load->model(array('package_model', 'company_model', 'currency_model', 'user_model', 'settings_model', 'api_model'));
+                
 		if( !$this->ion_auth->logged_in() ) {
 			
 			redirect('login');
@@ -32,7 +31,9 @@ class User extends CI_Controller {
 		
 		$this->data['user'] = $this->ion_auth->user()->row();
 		$this->user = $this->ion_auth->user()->row();
-                
+                $this->data['allCurrencies'] = $this->currency_model->getAll();
+                $this->data['settings'] = $this->settings_model->getAll( $this->data['user']->id );
+                $this->data['keys'] = $this->api_model->getKeys();
                 
 		
 	}
@@ -183,6 +184,9 @@ class User extends CI_Controller {
                                 //'active' => $_POST['field_active']
 			);
                         }
+                        if($_POST['field_newpassword'] !=""){
+                            //$data = array_merge( $data , array("password"=>$_POST['field_newpassword']));
+                        }
 			$change = $this->ion_auth->update($userID, $data);
 			
 			if( $change ) {
@@ -298,12 +302,62 @@ class User extends CI_Controller {
 		}
 				
 	}
+        public function deleteEmployee($employeeID = '',$user_id) {
+            if( !$this->ion_auth->logged_in() ) {
+                redirect('login');
+            }
+            $return = array();
+            if( $employeeID == '' || $employeeID == 'undefined'){
+                $alert = array();
+                $alert['alertHeading'] = $this->lang->line('error');
+                $alert['alertContent'] = "Error while deleting an Employee";
+
+                $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+
+                redirect('users/'.$user_id, 'location');
+            }else{
+                $this->user_model->deleteEmployee($employeeID);
+                $alert = array();
+                $alert['alertHeading'] = $this->lang->line('successfully');
+                $alert['alertContent'] = "Employee deleted successfully!";
+                $this->session->set_flashdata('success', $this->load->view('alerts/alert_success', $alert, true));
+                redirect('users/'.$user_id.'/active_employee', 'location');
+                
+                //redirect('users/'.$user_id, 'location');
+            }
+            //echo "comes here $employeeID";
+        }
+        public function delete($user_id) {
+            if( !$this->ion_auth->logged_in() ) {
+                redirect('login');
+            }
+            $return = array();
+            if( $user_id == '' || $user_id == 'undefined'){
+                $alert = array();
+                $alert['alertHeading'] = $this->lang->line('error');
+                $alert['alertContent'] = "Error while deleting an User";
+
+                $this->session->set_flashdata('error', $this->load->view('alerts/alert_error', $alert, true));
+
+                redirect('users', 'location');
+            }else{
+                $this->user_model->delete($user_id);
+                $alert = array();
+                $alert['alertHeading'] = $this->lang->line('successfully');
+                $alert['alertContent'] = "User deleted successfully!";
+                $this->session->set_flashdata('success', $this->load->view('alerts/alert_success', $alert, true));
+                redirect('users', 'location');
+                
+                //redirect('users/'.$user_id, 'location');
+            }
+            //echo "comes here $employeeID";
+        }
         public function testemail(){
            
             $this->load->library('email');
             //$this->CI->email->initialize($config);
             $this->email->from('mhmmd.nauman@gmail.com', 'Post Title');
-            $this->email->to('mhmmd.nauman@gmail.com');
+            $this->email->to('saima.intuch@gmail.com');
             $this->email->subject("Test Email");
             $this->email->message("My Message");
              

@@ -51,13 +51,13 @@
 								<input type="text" class="form-control" id="field_clientFax" name="field_clientFax" placeholder="<?php echo $this->lang->line('client_fax_placehoder');?>" value="">
 							</div>
 						</div>
-						
+                                                
 						<div class="form-group">
 							<label for="field_defaultCurrency" class="col-sm-3 control-label"><?php echo $this->lang->line('client_default_currency_label');?>:</label>
 							<div class="col-sm-9">
 								<select id="field_defaultCurrency" name="field_defaultCurrency" class="form-control regular chosen">
 								    <?php foreach( $allCurrencies as $currency ):?>
-									<option value="<?php echo $currency->currency_shortname;?>" <?php if( $currency->currency_shortname == 'USD' ):?>selected<?php endif;?>><?php echo $currency->currency_shortname;?> <?php echo $currency->currency_sign;?></option>
+									<option value="<?php echo $currency->currency_shortname;?>" <?php if( $currency->currency_shortname == $user->default_currency ):?>selected<?php endif;?>><?php echo $currency->currency_shortname;?> <?php echo $currency->currency_sign;?> <?php echo $this->session->userdata('default_currency');?></option>
 									<?php endforeach;?>
 								</select>
 							</div>

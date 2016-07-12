@@ -239,12 +239,18 @@
                                                                     if($employees){
                                                                     foreach($employees as $employee){?>
                                                                     <li class="all due" data-year="any">
-									<a href="#">
-										<span class="clearfix">
+                                                                        <div class="row">
+                                                                            <div class=" col-md-9">
+                                                                                <span class="clearfix">
                                                                                     <span class=" pull-left"><?php echo "#$employee->id - $employee->first_name $employee->last_name - $employee->email ";?></span>
-										</span>
+                                                                                </span> 
+                                                                            </div>
+                                                                            <div class=" col-md-2">
+                                                                                <a onclick="return confirmation();" href="<?php echo site_url('users/deleteEmployee/'.$employee->id.'/'.$theUser->id)?>" class="btn btn-primary">Delete</a> 
+                                                                            </div>
+                                                                        </div>	
 										
-									</a>
+								</a>
                                                                     </li>
                                                                     <?php } 
                                                                     }else{ ?>
@@ -350,14 +356,34 @@
 	<?php endif;?>
 	
 	$('#field_filterClients').fastLiveFilter('#clientList');
-	
+	$(function(){
+            $('#button_deleteClient').on('click', function(e){
+		
+			if( confirm('Do you want to delete that User?') ) {
+			
+				return true;
+			
+			} else {
+			
+				return false;
+			
+			}
+		
+		})
+        })
 	</script>
 	<script src="<?php echo base_url('js/Chart.min.js');?>"></script>
 	<script>
-	
-	
-	
-	</script>
+            function confirmation() {
+                var answer = confirm("Do you want to delete this record?");
+                if(answer){
+                        return true;
+                }else{
+                        return false;
+                }
+            }
+        
+        </script>
   </body>
 </html>
 	

@@ -918,11 +918,14 @@ class Ion_auth_model extends CI_Model
 		$ip_address = $this->_prepare_ip($this->input->ip_address());
 		$salt       = $this->store_salt ? $this->salt() : FALSE;
 		$password   = $this->hash_password($password, $salt);
-
+                // insert the company and assign it to new user
+                $this->db->insert('companies', array("company_name"=>$additional_data['company'],"company_phone"=>$additional_data['phone']));
+                $company_id  = $this->db->insert_id();
 		// Users table.
 		$data = array(
 		    'username'   => $username,
 		    'password'   => $password,
+                    'company_id' => $company_id,
 		    'email'      => $email,
 		    'ip_address' => $ip_address,
 		    'created_on' => time(),
@@ -933,7 +936,7 @@ class Ion_auth_model extends CI_Model
 		{
 			$data['salt'] = $salt;
 		}
-
+                
 		//filter out any data passed that doesnt have a matching column in the users table
 		//and merge the set user data and the additional data
 		$user_data = array_merge($this->_filter_data($this->tables['users'], $additional_data), $data);
@@ -1625,6 +1628,8 @@ class Ion_auth_model extends CI_Model
 		}
 
 		$this->trigger_events('extra_where');
+                
+                
 		$this->db->update($this->tables['users'], $data, array('id' => $user->id));
 
 		if ($this->db->trans_status() === FALSE)

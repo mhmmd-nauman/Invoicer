@@ -57,3 +57,28 @@ body {
 body .loginTabs .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
 	height: auto;
 }
+
+/*form css*/
+
+@media screen and (min-width: 800px) {
+    /* this css will only be used when the screen size is min 800px. desktop views */
+.col-md-offset-3 {
+    margin-left: 20% !important;
+}
+
+.form-horizontal .form-group {
+	margin-left: 15px !important;
+	margin-right: 15px !important;
+	height: 30px !important;
+}
+
+/* .form-horizontal {
+	height: 470px !important;
+}
+*/
+
+/*.loginTabs {
+    height: 720px !important;
+} */
+
+}
