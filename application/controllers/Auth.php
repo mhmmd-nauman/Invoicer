@@ -64,19 +64,21 @@ class Auth extends CI_Controller {
 			//check to see if the user is logging in
 			//check for "remember me"
 			$remember = (bool) $this->input->post('remember');
-
+                        
 			if ($this->ion_auth->login($this->input->post('identity'), $this->input->post('password'), $remember))
 			{
+                            
                             $user = $this->ion_auth->user()->row();
                             //look for trial account
+                            
                             if($user->trial_account == 1){
                                 // now look for expired period
                                 $start_date = $user->trial_date;
-                                $d1 = new DateTime(date("Y-m-d"));
-                                $d2 = new DateTime(date("Y-m-d",strtotime($start_date)));
-
-                                 $diff = $d2->diff($d1);
-                                 $effective_days = $diff->d ;
+                                $date1=date_create(date("Y-m-d",strtotime($start_date)));
+                                $date2=date_create(date("Y-m-d"));
+                                $diff=date_diff($date1,$date2);
+                                $effective_days = $diff->days ;
+                                
                                 if($effective_days > 15 ){
                                     // trial expired
                                     $alert = array();
@@ -95,7 +97,7 @@ class Auth extends CI_Controller {
                             //redirect them back to the home page
                             $this->session->set_flashdata('message', $this->ion_auth->messages());
                             //$this->config->set_item('base_url','http://test.getinvoicer.com/') ;
-
+                            
                             $webaddress = $user->webaddress;
                             if(empty($webaddress) || $this->config->base_url()=="http://localhost/invoiced/"){
                                redirect('/', 'refresh'); 
@@ -109,7 +111,8 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				//if the login was un-successful
+				
+                                //if the login was un-successful
 				//redirect them back to the login page
 				$this->session->set_flashdata('message', $this->ion_auth->errors());
                                
@@ -299,20 +302,20 @@ class Auth extends CI_Controller {
 		{
 			show_404();
 		}
-
+               
 		$user = $this->ion_auth->forgotten_password_check($code);
-
+                
 		if ($user)
 		{
 			//if the code is valid then display the password reset form
 
 			$this->form_validation->set_rules('new', $this->lang->line('reset_password_validation_new_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[new_confirm]');
 			$this->form_validation->set_rules('new_confirm', $this->lang->line('reset_password_validation_new_password_confirm_label'), 'required');
-
+                        
 			if ($this->form_validation->run() == false)
 			{
 				//display the form
-
+                                
 				//set the flash data error message if there is one
 				$this->data['message'] = (validation_errors()) ? validation_errors() : $this->session->flashdata('message');
 
@@ -343,7 +346,8 @@ class Auth extends CI_Controller {
 			}
 			else
 			{
-				// do we have a valid request?
+				
+                                // do we have a valid request?
 				if ($this->_valid_csrf_nonce() === FALSE || $user->id != $this->input->post('user_id'))
 				{
 
@@ -835,6 +839,7 @@ class Auth extends CI_Controller {
             
             if($userID){
                 $theUser = $user = $this->ion_auth->user($userID)->row();
+                
                 $this->data['theUser'] = $theUser;
                 $groups = $this->ion_auth->get_users_groups($userID)->result();
                 $this->data['groups'] = $groups;
@@ -848,6 +853,7 @@ class Auth extends CI_Controller {
             }elseif($this->ion_auth->in_group(array(2))){
                 $this->data['users'] = $this->user_model->getEmployee($this->ion_auth->user()->row()->id);
             }
+            //$this->user = $this->ion_auth->user()->row();
             $this->load->view('users', $this->data);
             
         }

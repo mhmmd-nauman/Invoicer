@@ -860,7 +860,7 @@
 		</div><!-- /.modal-dialog -->
 		
 	</div><!-- /.modal -->
-
+    <?php $this->load->view('shared/modal_newemployee');?>
     <?php $this->load->view('shared/shared_javascript');?>
 	
 	<?php if( isset($theInvoice) ):?>

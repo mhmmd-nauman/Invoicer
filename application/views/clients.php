@@ -407,7 +407,7 @@
 	</section>
 	
 	<?php $this->load->view('shared/modal_account');?>
-	
+	<?php $this->load->view('shared/modal_newemployee');?>
 	<?php $this->load->view('shared/modal_apikey');?>
 		
 	<?php $this->load->view('shared/modal_newclient');?>
