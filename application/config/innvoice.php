@@ -100,7 +100,7 @@ $config['export_report_prepend'] = "report_";
 	From address is used for all emails send by the script
 	
 */
-$config['email_from_address'] = "mhmmd.nauman@gmail.com";
+$config['email_from_address'] = "getinvoicer@gmail.com";
 
 /*
 

@@ -168,6 +168,7 @@ class User extends CI_Controller {
                                 'company' => $_POST['field_company'],
                                 'webaddress' => $_POST['field_web_address'],
                                 'trial_account' => $_POST['field_trial_account'],
+                                'package_id' => $_POST['field_trial_package_id'],
                                 'trial_date' => date("Y-m-d",strtotime($_POST['field_trial_date'])),
                                 'active' => $_POST['field_active']
 			);
@@ -352,21 +353,5 @@ class User extends CI_Controller {
             }
             //echo "comes here $employeeID";
         }
-        public function testemail(){
-           
-            $this->load->library('email');
-            //$this->CI->email->initialize($config);
-            $this->email->from('mhmmd.nauman@gmail.com', 'Post Title');
-            $this->email->to('saima.intuch@gmail.com');
-            $this->email->subject("Test Email");
-            $this->email->message("My Message");
-             
-
-            if($this->email->send()):
-                    echo "sent";
-            else:
-                    echo $this->email->print_debugger();
-            endif;
-        }
-	
+        
 }

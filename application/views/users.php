@@ -81,6 +81,17 @@
 							<div class="dashboard">
                                                             <?php if ($this->ion_auth->is_admin()){?>
                                                             <div class="form-group">
+                                                                <label for="field_clientPackage" class="col-sm-3 control-label">Package:<span class="text-danger">*</span></label>
+                                                                <div class="col-sm-9">
+                                                                       <select class="form-control select select-default select-block mbl custom" name="field_trial_package_id" id="field_package_id" >
+                                                                            <option value="1" <?php if( $theUser->package_id == 1 ):?>selected<?php endif;?>>BUDGET</option>
+                                                                            <option value="2" <?php if( $theUser->package_id == 2 ):?>selected<?php endif;?>>FREELANCER</option>
+                                                                            <option value="3" <?php if( $theUser->package_id == 3 ):?>selected<?php endif;?>>BUSINESS</option>
+                                                                        </select>
+                                                                        <div class="help-block with-errors"></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
                                                                 <label for="field_clientName" class="col-sm-3 control-label">Trial Account:<span class="text-danger">*</span></label>
                                                                 <div class="col-sm-9">
                                                                        <select class="form-control select select-default select-block mbl custom" name="field_trial_account" id="field_trial_account" >

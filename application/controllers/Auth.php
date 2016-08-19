@@ -79,7 +79,7 @@ class Auth extends CI_Controller {
                                 $diff=date_diff($date1,$date2);
                                 $effective_days = $diff->days ;
                                 
-                                if($effective_days > 15 ){
+                                if($effective_days > 7 ){
                                     // trial expired
                                     $alert = array();
                                     $alert['alertHeading'] = $this->lang->line('error');
@@ -104,7 +104,7 @@ class Auth extends CI_Controller {
                             }
                             ?>
                             <script type="text/javascript">
-                            window.location.href="http://<?php echo $webaddress;?>";
+                            window.location.href="http://<?php echo $webaddress;?>/invoiced/";
                             </script>
                             <?php
 				

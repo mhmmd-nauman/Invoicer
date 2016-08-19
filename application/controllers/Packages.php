@@ -81,8 +81,8 @@ class Packages extends CI_Controller {
                         $this->session->set_flashdata('success', $this->load->view('alerts/alert_success', $alert, true));
                         // send the customer email
                         $this->load->library('email');
-                        $from_email = 'mhmmd.nauman@gmail.com';
-                        $this->email->from($from_email, 'Muhammad Nauman'); 
+                        $from_email = 'getinvoicer@gmail.com';
+                        $this->email->from($from_email, 'Get Invoicer'); 
                         $this->email->to($user->email);
                         $this->email->subject('Inovicer Package Updated');
                         $message = "Hi, <br> Your package has been updated sucessfully.<br><br>Thank you";
