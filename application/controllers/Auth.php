@@ -479,8 +479,9 @@ class Auth extends CI_Controller {
 		$this->form_validation->set_rules('company', $this->lang->line('create_user_validation_company_label'), 'required');
 		$this->form_validation->set_rules('password', $this->lang->line('create_user_validation_password_label'), 'required|min_length[' . $this->config->item('min_password_length', 'ion_auth') . ']|max_length[' . $this->config->item('max_password_length', 'ion_auth') . ']|matches[password_confirm]');
 		$this->form_validation->set_rules('password_confirm', $this->lang->line('create_user_validation_password_confirm_label'), 'required');
-
-		if ($this->form_validation->run() == true)
+                $this->form_validation->set_rules('webaddress', "Login URL", 'required|max_length[26]');
+		//if(1)
+                if ($this->form_validation->run() == true)
 		{
 			$username = strtolower($this->input->post('first_name')) . ' ' . strtolower($this->input->post('last_name'));
 			$email    = strtolower($this->input->post('email'));
@@ -496,12 +497,17 @@ class Auth extends CI_Controller {
                                 'trial_date' => date('Y-m-d'),
 			);
 		}
-		if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data))
+		//if(1)
+                if ($this->form_validation->run() == true && $this->ion_auth->register($username, $password, $email, $additional_data))
 		{
 			//check to see if we are creating the user
 			//redirect them back to the admin page
-			$this->session->set_flashdata('message', $this->ion_auth->messages());
-			redirect("auth", 'refresh');
+                        //echo $this->ion_auth->messages();
+                        //exit;
+			//echo "s";
+                        $this->data['message'] = "Activation email sent to your Inbox. Please click on the link in email to start using Invoicer.";
+			$this->_render_page('auth/create_user_success', $this->data);
+                        //redirect("auth", 'refresh');
 		}
 		else
 		{
